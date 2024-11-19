@@ -14,6 +14,7 @@ body{
     font-size:1.777rem;
     line-height:1.5;
 }
+/*字体*/
 h1, h2, h3, h4, h5, h6 {
     margin:1rem;
     color:var(--color-text);
@@ -44,12 +45,34 @@ p{
     font-style:normal;
     text-align: center; 
 }
+/*links*/
+a{
+    text-decoration:none;
+    font-size: 2rem;
+    font-weight:bold;
+}
+.link-arrow{
+    color:var(--color-accent);
+    text-transform:uppercase;
+}
+.link-arrow::after{
+    content:'-->';
+    margin-left:5px;
+    transition: margin 0.15s;
+}
+.link-arrow:hover::after{
+    margin-left:10px;
+}
+
 @media screen and (min-width:1024px) {
     body{
         font-size:0.707rem;
     }
+    .link-arrow {
+        font-size:1.5rem;
+     }
     h1{
-        font-size: 17.993rem;
+        font-size: 7.993rem;
       }
     h2{
         font-size: 5.653rem;
