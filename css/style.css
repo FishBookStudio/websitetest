@@ -1,9 +1,74 @@
-body{
-    background:gold;
-}
 :root{
     --color-primary:#fec7d7;
     --color-secondary:#d9d4e7;
     --color-accent:#a786df;
-    --color-headings:#0e172c;
+    --color-text:#0e172c;
+}
+html{
+    /* 62.5% * 16px=10px */
+    font-size:62.5%;
+  }
+body{
+    font-family:'Noto Sans SC',Georgia, 'Times New Roman', Times, serif; 
+    color:var(--color-primary);
+    font-size:1.777rem;
+    line-height:1.5;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin:1rem;
+    color:var(--color-text);
+  }
+h1{
+    font-size: 5.61rem;
+  }
+h2{
+    font-size: 4.209rem;
+  }
+h3{
+    font-size: 3.157rem;
+  }
+  h4{
+    font-size: 2.369rem;
+  }
+  h5{
+    font-size: 1.777rem;
+  }
+h6{
+    font-size:1.2rem;
+  }
+p{
+    margin: 0px 0px ;
+    padding: 0;
+    font-weight: normal;
+    font-size:1.7rem;
+    font-style:normal;
+    text-align: center; 
+}
+@media screen and (min-width:1024px) {
+    body{
+        font-size:0.707rem;
+    }
+    h1{
+        font-size: 17.993rem;
+      }
+    h2{
+        font-size: 5.653rem;
+      }
+    h3{
+        font-size: 3.998rem;
+      }
+    h4{
+        font-size: 2.827rem;
+      }
+    h5{
+        font-size: 1.9.99rem;
+      }
+    h6{
+        font-size:1.414rem;
+      }
+    p{
+        margin: 0px 0px ;
+        font-size:1rem;
+        font-style:normal;
+    }
 }
