@@ -1,3 +1,6 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
 :root{
     --color-primary:#fec7d7;
     --color-secondary:#d9d4e7;
@@ -51,7 +54,7 @@ p{
 /*links*/
 a{
     text-decoration:none;
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight:bold;
 }
 .link-arrow{
@@ -127,6 +130,65 @@ a{
     justify-content:center;
     align-items:center;
 }
+
+
+/*buttons*/
+.btn{
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.707rem;
+    font-weight: 600;
+    margin:1rem 0;
+    padding: 2rem 3rem;
+    text-transform:uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+.btn-element {
+    background-color:var(--color-text);
+    color: #fffffe;
+    
+}
+
+.btn-pink {
+    background-color:var(--color-primary);
+    color: var(--color-text);
+    
+}
+
+.btn-purple {
+    background-color:var(--color-secondary);
+    color:var(--color-text);   
+}
+
+
+.btn-element:hover {
+    background-color: var(--color-accent);
+}
+.btn-pink:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+}
+.btn-purple:hover {
+    background-color:var(--color-accent);
+    color: var(--color-text);
+}
+.btn--block{
+    width:100%;
+    display: inline-block;
+}
+.btn--outline {
+    background:#fffffe;
+    color:var(--color-accent);
+    border: 2px solid var(--color-accent);
+}
+
+.btn--outline:hover {
+    background:var(--color-accent);
+    color:#fffffe;
+}
+
 @media screen and (min-width:1024px) {
     body{
         font-size:1.707rem;
@@ -166,5 +228,8 @@ a{
     .list--tick .list_item{
         padding-left:0;
 
+    }
+    .btn{
+        font-size:1.4rem;
     }
 }
