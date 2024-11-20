@@ -82,10 +82,27 @@ a{
 .badge--small{
     font-size:1.6rem;
 }
-
+/*lists*/
+.list{
+    list-style:none;
+    padding-left:0;
+    color:var(--color-text);
+}
+.list--inline .list_item {
+    display:inline-block;
+    margin-right:2rem;
+}
+.list--tick{
+    list-style-image:url(../images/tick.svg);
+    padding-left:3rem;
+}
+.list--tick .list_item{
+    padding-left:1rem;
+    margin-bottom:1rem;
+}
 @media screen and (min-width:1024px) {
     body{
-        font-size:0.707rem;
+        font-size:1.707rem;
     }
     .link-arrow {
         font-size:1.5rem;
@@ -110,7 +127,7 @@ a{
       }
     p{
         margin: 0px 0px ;
-        font-size:1rem;
+        font-size:1.777rem;
         font-style:normal;
     }
     .badge{
@@ -118,5 +135,9 @@ a{
     }
     .badge--small{
         font-size:1.2rem;
+    }
+    .list--tick .list_item{
+        padding-left:0;
+
     }
 }
