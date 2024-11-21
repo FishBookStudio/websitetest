@@ -308,7 +308,41 @@ a{
     margin-top: 1rem;
 }
 
-@media screen and (min-width:1024p x) {
+
+
+/*quotes*/
+.quote{
+    font-size:3rem;
+    font-style:italic;
+    color:var(--color-secondary);
+}
+.quote__text{
+    color:var(--color-secondary);
+}
+.quote__text::before{
+     content:open-quote;
+}
+.quote__text::after{
+    content:close-quote;
+}
+.quote__author{
+    font-size:3rem;
+    font-style:normal;
+    font-weight:500;
+    color:var(--color-accent);
+    margin-bottom: 0;
+}
+.quote_organization{
+    color:var(--color-text);
+    opacity: 0.4;
+    font-size:2rem;
+    font-style: normal;
+}
+.quote__line{
+    position: relative;
+    bottom:7px;
+}
+@media screen and (min-width:1024px) {
     body{
         font-size:1.707rem;
     }
@@ -366,6 +400,15 @@ a{
     }
     .plan__description{
         font-size: 1.7rem;
+    }
+    .quote{
+        font-size:2rem;
+    }
+    .quote__author{
+        font-size:2.4rem;
+    }
+    .quote_organization{
+        font-size:1.6rem;
     }
 }
 /*<a href="https://www.freepik.com/search">Icon by UIcons</a>*/
