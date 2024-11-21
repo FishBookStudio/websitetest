@@ -6,6 +6,8 @@
     --color-secondary:#d9d4e7;
     --color-accent:#a786df;
     --color-text:#0e172c;
+    --color-border:#ccc;
+    --border-radius:36px;
 }
 html{
     /* 62.5% * 16px=10px */
@@ -119,7 +121,7 @@ a{
 }
 
 .icon-primary{
-    fill:var(--color-primary);
+    fill:var(--color-text);
 }
 .icon-container{
     background:var(--color-secondary);
@@ -134,7 +136,7 @@ a{
 
 /*buttons*/
 .btn{
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     border: none;
     cursor: pointer;
     font-size: 1.707rem;
@@ -166,7 +168,7 @@ a{
 .btn-element:hover {
     background-color: var(--color-accent);
 }
-.btn-pink:hover {
+.btn-pink:hover { 
     background-color: var(--color-accent);
     color: var(--color-text);
 }
@@ -189,6 +191,33 @@ a{
     color:#fffffe;
 }
 
+
+
+/*inputs*/
+.input{
+    padding: 1.5rem 3.5rem;
+    border: 1px solid #ccc;
+    border-radius:var(--border-radius);
+    outline:0;
+    color:var(--color-text)
+}
+::placeholder{
+    color:#d9d4e7;
+    font-size:2rem;
+}
+.input-group{
+    border: 1px solid var(--color-border );
+    border-radius: var(--border-radius);
+    display:flex;
+}
+.input-group .input{
+    border:0;
+    flex-grow: 1;
+    padding-left: 0;
+}
+.input-group .btn{
+    margin:4px;
+}
 @media screen and (min-width:1024px) {
     body{
         font-size:1.707rem;
@@ -231,5 +260,9 @@ a{
     }
     .btn{
         font-size:1.4rem;
+    }
+    ::placeholder{
+        color:#d9d4e7;
+        font-size:1.5rem;
     }
 }
