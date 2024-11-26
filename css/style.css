@@ -140,7 +140,7 @@ a{
     fill:var(--color-text);
 }
 .icon-container{
-    background:var(--color-secondary);
+    
     width:80px;
     height:80px;
     border-radius:100%;
@@ -249,11 +249,14 @@ a{
     background: var(--color-primary);
     color: var(--color-text);
 }
-.card--secondary .card__header{
+.card--accent .card__header{
     background: var(--color-accent);
     color: var(--color-secondary);
 }
-
+.card--secondary .card__header{
+    background: var(--color-secondary);
+    color: var(--color-text);
+}
 
 
 /*plans*/
@@ -317,7 +320,7 @@ a{
     color:var(--color-secondary);
 }
 .quote__text{
-    color:var(--color-secondary);
+    color:var(--color-text);
 }
 .quote__text::before{
      content:open-quote;
@@ -342,6 +345,48 @@ a{
     position: relative;
     bottom:7px;
 }
+
+/*testimonials*/
+.testimonial{
+    padding: 3rem;
+}
+
+.testimonial__image > img{
+    width:100%;
+}
+.testimonial__image{
+    position:relative;
+}
+.testimonial__image > .icon-container{
+    position:absolute;
+    top:3rem;
+    right:-32px;
+}
+.icon-container--accent{
+    background:none;
+}
+.icon--accent{
+    fill:var(--color-accent);
+}
+.icon--small{
+    width:40px;
+    height:40px;
+}
+/*grids*/
+.grid{
+  display:grid;
+}
+@media screen and (min-width:768px) {
+    .grid--cols-2{
+        grid-template-columns:1fr 1fr;
+    }
+}
+@media screen and (min-width:1024px) {
+    .grid--cols-3{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+}
+
 @media screen and (min-width:1024px) {
     body{
         font-size:1.707rem;
@@ -409,6 +454,15 @@ a{
     }
     .quote_organization{
         font-size:1.6rem;
+    }
+}
+@media screen and (min-width:768px) {
+    .testimonial .quote,
+    .testimonial .quote__author{
+        font-size:2.4rem;
+    }
+    .testimonial .quote{
+        margin-left: 6rem;
     }
 }
 /*<a href="https://www.freepik.com/search">Icon by UIcons</a>*/
