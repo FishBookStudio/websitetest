@@ -163,8 +163,8 @@ a{
     white-space: nowrap;
     text-align: center;
 }
-.btn-element {
-    background-color:var(--color-text);
+.btn-accent {
+    background-color:var(--color-accent);
     color: #fffffe;
     
 }
@@ -206,6 +206,11 @@ a{
     background:var(--color-accent);
     color:#fffffe;
 }
+.btn--long{
+    padding-left:6rem;
+    padding-right:6rem;
+}
+
 
 
 
@@ -257,6 +262,7 @@ a{
     background: var(--color-secondary);
     color: var(--color-text);
 }
+
 
 
 /*plans*/
@@ -376,6 +382,7 @@ a{
 .grid{
   display:grid;
 }
+
 @media screen and (min-width:768px) {
     .grid--cols-2{
         grid-template-columns:1fr 1fr;
@@ -384,6 +391,41 @@ a{
 @media screen and (min-width:1024px) {
     .grid--cols-3{
         grid-template-columns:1fr 1fr 1fr;
+    }
+}
+
+
+/*callouts*/
+.callout{
+    padding:4rem;
+    border-radius:5px;
+}
+.callout--primary{
+    background:var(--color-primary);
+    color:var(--color-text);
+}
+.callout___heading{
+    margin-top:0;
+    font-size:3rem;
+}
+.callout .btn{
+    align-self:center;
+    justify-self:center;
+}
+.callout__content{
+    text-align: center;
+}
+@media screen and (min-width:768px){
+    .callout__content{
+        text-align: left;
+    }
+    .callout .btn{
+        align-self:center;
+        justify-self:start;
+        margin:2rem;
+    }
+    .callout .grid--cols-2{
+        grid-template-columns: 1fr auto;
     }
 }
 
