@@ -126,6 +126,12 @@ p{
     padding-left:6rem;
     padding-right:6rem;
 }
+.btn .icon{
+    width:2rem;
+    height:2rem;
+    margin-right:1rem;
+    vertical-align: middle;
+}
 
 
 
@@ -204,6 +210,65 @@ p{
 .card--secondary .card__header{
     background: var(--color-secondary);
     color: var(--color-text);
+}
+
+
+
+
+
+
+/*折叠组件*/
+.collapsible__header{
+    display:flex;
+    justify-content: space-between;
+}
+.collapsible__heading{
+    margin-top:0;
+    font-size:3rem;
+}
+.collapsible_chevron{
+    transform:rotate(-90deg);
+    transition: transform 0.3s;
+}
+.collapsible__content{
+    max-height:0;
+    overflow:hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.collapsible--expanded .collapsible_chevron {
+    transform:rotate(0);
+}
+.collapsible--expanded .collapsible__content{
+    max-height: 100vh;
+    opacity: 1;
+}
+
+
+
+
+
+/*domain block*/
+.block-domain .input-group{
+    box-shadow: 0 0 30px 20px #e6ebee;
+    border:0;
+    margin:4rem auto;
+    max-width: 670px;
+}
+.block-domain__prices{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:repeat(2,6rem);
+    font-size: 2rem;
+    font-weight: 600;
+    justify-items:center;
+    max-width: 700px;
+    margin:0 auto;
+}
+@media screen and (min-width: 768px) {
+    .block-domain__prices {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
 }
 
 /*grids*/
@@ -366,13 +431,15 @@ a{
 }
 
 .icon-primary{
-    fill:var(--color-text);
+    fill:var(--color-primary);
 }
 .icon-accent{
     fill:var(--color-accent);
 }
-.icon-container{
-    
+.icon-text{
+    fill:var(--color-text);
+}
+.icon-container{    
     width:80px;
     height:80px;
     border-radius:100%;
@@ -405,7 +472,7 @@ a{
 .input-group .input{
     border:0;
     flex-grow: 1;
-    padding-left: 0;
+    padding:1.5rem 2rem;
 }
 .input-group .btn{
     margin:4px;
@@ -566,32 +633,7 @@ a{
     }
 }
 
-/*折叠组件*/
-.collapsible__header{
-    display:flex;
-    justify-content: space-between;
-}
-.collapsible__heading{
-    margin-top:0;
-    font-size:3rem;
-}
-.collapsible_chevron{
-    transform:rotate(-90deg);
-    transition: transform 0.3s;
-}
-.collapsible__content{
-    max-height:0;
-    overflow:hidden;
-    opacity: 0;
-    transition: all 0.3s;
-}
-.collapsible--expanded .collapsible_chevron {
-    transform:rotate(0);
-}
-.collapsible--expanded .collapsible__content{
-    max-height: 100vh;
-    opacity: 1;
-}
+
 
 
 
