@@ -13,40 +13,29 @@
       rel="stylesheet"
     />
   </head>
-  <body style="padding: 5rem">
-    
-    
-    <h1>Heading 1</h1>
-    <a href="#" class="link-arrow">learn more</a>
-    <div style="width: 30%; padding: 4rem">
-      <div class="card card--primary">
-        <header class="card__header">card title</header>
-        <div class="card__body">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis,
-          laudantium?
-        </div>
-      </div>
-    </div>
-    
+  <body>
     <div class="media">
       <div class="media__image">
-          <svg class="icon icon-primary">
-            <use xlink:href="images/sprite.svg#snap"></use>
-          </svg>
+        <svg class="icon icon-primary">
+          <use xlink:href="images/sprite.svg#snap"></use>
+        </svg>
       </div>
       <div class="media__body">
         <h3 class="media__title">easy start & managed updates</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ratione totam error quo quae facilis ipsam mollitia sapiente aliquam soluta!</p>      
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+          ratione totam error quo quae facilis ipsam mollitia sapiente aliquam
+          soluta!
+        </p>
       </div>
     </div>
-    
 
     <h2>Heading 2</h2>
 
     <div class="card testimonial__image">
       <div class="grid grid--cols-2">
         <div class="testimonial__image">
-          <img src="images/fishbookavatar.PNG" alt="fishbookavatar">
+          <img src="images/fishbookavatar.PNG" alt="fishbookavatar" />
           <span class="icon-container .icon-container--accent">
             <svg class="icon icon--accent icon--small">
               <use xlink:href="images/sprite.svg#quotes"></use>
@@ -73,13 +62,6 @@
         </blockquote>
       </div>
     </div>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae impedit
-      quis, nam asperiores explicabo necessitatibus recusandae alias sunt
-      cupiditate ipsa!中文怎么样
-    </p>
     <button class="btn btn-element">Click Me</button>
     <button class="btn btn-pink">Click Me</button>
 
@@ -99,7 +81,50 @@
       />
       <button class="btn btn-purple">search</button>
     </div>
-    <sapn class="badge badge--primary badge--small">10% OFF</sapn>
+    <div class="collapsible collapsible--expanded">
+      <header class="collapsible__header">
+        <h2 class="collapsible__heading">product</h2>
+        <svg
+          class="icon icon-accent collapsible_chevron"
+          xmlns="http://www.w3.org/2000/svg"
+          id="Bold"
+          viewBox="0 0 24 24"
+          width="512"
+          height="512"
+        >
+          <path
+            d="M1.51,6.079a1.492,1.492,0,0,1,1.06.44l7.673,7.672a2.5,2.5,0,0,0,3.536,0L21.44,6.529A1.5,1.5,0,1,1,23.561,8.65L15.9,16.312a5.505,5.505,0,0,1-7.778,0L.449,8.64A1.5,1.5,0,0,1,1.51,6.079Z"
+          />
+        </svg>
+      </header>
+      <div class="collapsible__content">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt iusto
+        molestias, quidem praesentium velit recusandae veritatis sapiente
+        quisquam! Beatae, id!
+      </div>
+    </div>
+    <div class="collapsible collapsible--expanded">
+      <header class="collapsible__header">
+        <h2 class="collapsible__heading">product</h2>
+        <svg
+          class="icon icon-accent collapsible_chevron"
+          xmlns="http://www.w3.org/2000/svg"
+          id="Bold"
+          viewBox="0 0 24 24"
+          width="512"
+          height="512"
+        >
+          <path
+            d="M1.51,6.079a1.492,1.492,0,0,1,1.06.44l7.673,7.672a2.5,2.5,0,0,0,3.536,0L21.44,6.529A1.5,1.5,0,1,1,23.561,8.65L15.9,16.312a5.505,5.505,0,0,1-7.778,0L.449,8.64A1.5,1.5,0,0,1,1.51,6.079Z"
+          />
+        </svg>
+      </header>
+      <div class="collapsible__content">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt iusto
+        molestias, quidem praesentium velit recusandae veritatis sapiente
+        quisquam! Beatae, id!
+      </div>
+    </div>
     <blockquote class="quote">
       <p class="quote__text">
         希望我可以创造一片结界，如同创造魔法森林。营造密林，熬制神秘糖果，封装勇气和爱，分发给过路的人。
@@ -113,12 +138,31 @@
           </div>
           <div class="media__body">
             <h3 class="media__title quote__author">Melody</h3>
-            <p class="quote_organization">
-              鳕鱼的笔记研究所
-            </p>
+            <p class="quote_organization">鳕鱼的笔记研究所</p>
           </div>
         </div>
       </footer>
     </blockquote>
+    <section class="block block--dark block--skewed-right">
+      <div class="container">
+        <header class="block__header">
+          <h2 class="block__heading">Heading 4</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam
+            molestias assumenda odio quos incidunt impedit, minus earum vel sint
+            alias.
+          </p>
+        </header>
+      </div>
+    </section>
+    <section class="block container">
+      <h2 class="block__heading">Heading 4</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam
+        molestias assumenda odio quos incidunt impedit, minus earum vel sint
+        alias.
+      </p>
+    </section>
+    <script src="main.js"></script>
   </body>
 </html>

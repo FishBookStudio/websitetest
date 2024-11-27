@@ -22,7 +22,10 @@ body{
 
 
 
-
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
 
 /*字体*/
 h1, h2, h3, h4, h5, h6 {
@@ -54,99 +57,12 @@ p{
     font-size:1.7rem;
     font-style:normal;
     text-align: center; 
-    color:var(--color-text);
 }
 
-
-
-/*links*/
-a{
-    text-decoration:none;
-    font-size: 1.7rem;
-    font-weight:bold;
-}
-.link-arrow{
-    color:var(--color-accent);
-    text-transform:uppercase;
-}
-.link-arrow::after{
-    content:'-->';
-    margin-left:5px;
-    transition: margin 0.15s;
-}
-.link-arrow:hover::after{
-    margin-left:10px;
-}
-
-
-
-/*badges*/
-.badge{
-    border-radius: 20px;
-    font-size:2rem;
-    font-weight:500;
-    padding: 0.5rem 2rem;
-    white-space:nowrap;
-    text-transform:uppercase;
-}
-.badge--primary{
-    background-color: var(--color-primary);
-    color:var(--color-text);
-}
-.badge--secondary{
-    background-color: var(--color-secondary);
-    color:var(--color-text);
-}
-.badge--small{
-    font-size:1.6rem;
-    padding:0.5rem 1.5rem;
-}
-
-
-
-
-
-/*lists*/
-.list{
-    list-style:none;
-    padding-left:0;
-    color:var(--color-text);
-}
-.list--inline .list_item {
-    display:inline-block;
-    margin-right:2rem;
-}
-.list--tick{
-    list-style-image:url(../images/tick.svg);
-    padding-left:3rem;
-}
-.list--tick .list_item{
-    padding-left:1rem;
-    margin-bottom:1rem;
-}
-.list_item{
-    color:var(--color-text)
-}
-
-
-
-/*icons*/
-.icon{
+.avatar{
     width:40px;
     height:40px;
-}
-
-.icon-primary{
-    fill:var(--color-text);
-}
-.icon-container{
-    
-    width:80px;
-    height:80px;
-    border-radius:100%;
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
+    border-radius:20px;
 }
 
 
@@ -210,6 +126,197 @@ a{
     padding-left:6rem;
     padding-right:6rem;
 }
+
+
+
+
+/*badges*/
+.badge{
+    border-radius: 20px;
+    font-size:2rem;
+    font-weight:500;
+    padding: 0.5rem 2rem;
+    white-space:nowrap;
+    text-transform:uppercase;
+}
+.badge--primary{
+    background-color: var(--color-primary);
+    color:var(--color-text);
+}
+.badge--secondary{
+    background-color: var(--color-secondary);
+    color:var(--color-text);
+}
+.badge--small{
+    font-size:1.6rem;
+    padding:0.5rem 1.5rem;
+}
+
+
+/*blocks*/
+.block{
+    --padding-vertical: 6rem;
+    padding: var(--padding-vertical) 2rem;
+   
+}
+.block__heading{
+    margin-top: 0;
+}
+.block--dark{
+    background: #0e172c;
+    color: #d9d4e7;
+}
+.block--dark .block__heading{
+    color:#fffffe;
+}
+.block--skewed-right{
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%);
+    padding-bottom:calc(var(--padding-vertical) + 4rem);
+}
+.block--skewed-left{
+    clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
+    padding-bottom:calc(var(--padding-vertical) + 4rem);
+}
+.block__header{
+    text-align:center;
+}
+
+
+
+
+/*lists*/
+.list{
+    list-style:none;
+    padding-left:0;
+    color:var(--color-text);
+}
+.list--inline .list_item {
+    display:inline-block;
+    margin-right:2rem;
+}
+.list--tick{
+    list-style-image:url(../images/tick.svg);
+    padding-left:3rem;
+}
+.list--tick .list_item{
+    padding-left:1rem;
+    margin-bottom:1rem;
+}
+.list_item{
+    color:var(--color-text)
+}
+
+
+/*links*/
+a{
+    text-decoration:none;
+    font-size: 1.7rem;
+    font-weight:bold;
+}
+.link-arrow{
+    color:var(--color-accent);
+    text-transform:uppercase;
+}
+.link-arrow::after{
+    content:'-->';
+    margin-left:5px;
+    transition: margin 0.15s;
+}
+.link-arrow:hover::after{
+    margin-left:10px;
+}
+
+
+
+
+
+/*NAVIGATION BAR*/
+.nav{
+    background:var(--color-secondary);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:0 1rem;
+    align-items:center;
+}
+.nav__list{
+  width:100%;
+  margin:0;
+}
+.nav__item{
+    padding:0.5rem 2rem;
+    border-bottom: 1px solid #d9d4e7;
+    
+}
+.nav_brand{
+    padding-top: 0.7rem;
+}
+.nav__item>a{
+    color:#0e172c;
+    transition:color .3s;
+}
+.nav__item > a:hover {
+    color:var(--color-accent);
+}
+.nav__toggler{
+    opacity:0.5;
+    transition: box-shadow .15s;
+    cursor:pointer;
+}
+.nav.collapsible--expanded .nav__toggler{
+    opacity:1;
+    box-shadow:0 0 0 3px #666;
+    border-radius:5px;
+}
+@media screen and (min-width: 768px) {
+    .nav__toggler{
+        display: none;
+    }
+    .nav__list{
+        width:auto;
+        display:flex;
+        font-size:2rem;
+        max-height: 100%;
+        opacity: 1;
+    }
+    .nav__item{
+        border:0;
+    }
+    .collapsible__content {
+        max-height: none; /* 允许高度自适应 */
+        overflow: visible; /* 取消内容隐藏 */
+        opacity: 1; /* 确保内容完全可见 */
+      }
+}
+
+
+
+
+
+
+
+/*icons*/
+.icon{
+    width:40px;
+    height:40px;
+}
+
+.icon-primary{
+    fill:var(--color-text);
+}
+.icon-accent{
+    fill:var(--color-accent);
+}
+.icon-container{
+    
+    width:80px;
+    height:80px;
+    border-radius:100%;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+}
+
 
 
 
@@ -428,6 +535,36 @@ a{
         grid-template-columns: 1fr auto;
     }
 }
+
+/*折叠组件*/
+.collapsible__header{
+    display:flex;
+    justify-content: space-between;
+}
+.collapsible__heading{
+    margin-top:0;
+    font-size:3rem;
+}
+.collapsible_chevron{
+    transform:rotate(-90deg);
+    transition: transform 0.3s;
+}
+.collapsible__content{
+    max-height:0;
+    overflow:hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.collapsible--expanded .collapsible_chevron {
+    transform:rotate(0);
+}
+.collapsible--expanded .collapsible__content{
+    max-height: 100vh;
+    opacity: 1;
+}
+
+
+
 
 @media screen and (min-width:1024px) {
     body{
