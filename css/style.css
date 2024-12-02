@@ -45,7 +45,7 @@ body{
     font-size: 1.707rem;
     font-weight: 600;
     margin:1rem 0;
-    padding: 2rem 3rem;
+    padding: 2rem 4vw;
     text-transform:uppercase;
     white-space: nowrap;
     text-align: center;
@@ -293,6 +293,70 @@ body{
 
 
 
+/*footer*/
+.footer__section{
+    padding:2rem;
+    border-bottom:1px solid #393939;
+}
+.footer__heading{
+    text-transform:uppercase;
+    font-weight:600;
+}
+.footer__brand > img {
+    width:50%;
+}
+.footer__brand{
+    margin-top:5rem;
+    text-align:center;
+}
+.footer__copyright{
+    font-size: 2.1rem;
+    opacity:0.3;
+}
+.footer a{
+    color:var(--color-primary);
+    transition: color .3s;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.footer a:hover{
+    color:var(--color-accent);
+}
+.footer__section .list{
+    margin:0;
+}
+@media screen and (min-width: 768px) {
+    .footer__sections{
+        grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+    }
+    .footer .collapsible_chevron{
+        display:none;
+    }
+    .footer .collapsible__content{
+        opacity:1;
+        max-height:100%;
+    }
+    .footer__brand{
+        order:-1;
+        margin-top:1rem;
+    }
+    .footer__copyright{
+        font-size: 1.5rem;
+    }
+    .footer__section{
+        border:0;
+    }
+    .footer__heading{
+        font-size:1.6rem;
+    }
+}
+
+
+
+
+
+
+
 
 
 
@@ -403,7 +467,7 @@ p{
 }
 
 .icon-primary{
-    fill:var(--color-primary);
+    fill:var(--color-accent);
 }
 .icon-accent{
     fill:var(--color-accent);
@@ -445,6 +509,7 @@ p{
     border:0;
     flex-grow: 1;
     padding:1.5rem 2rem;
+    width:0;
 }
 .input-group .btn{
     margin:4px;
@@ -695,6 +760,7 @@ a{
     }
     .block-showcase__image {
         justify-self: end;
+        align-self:center;
     }
     .block-showcase__image > img {
         width: auto;
@@ -715,7 +781,7 @@ a{
 }
 .salesplan .card{
     max-width:700px;
-    margin:0 auto;
+    margin:0 0;
 }
 
 /*testimonials*/
@@ -793,7 +859,6 @@ a{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    max-width: 25.5rem;
     margin-bottom: 1rem;
     padding: 1.5rem;
     display: inline-block;
@@ -880,7 +945,7 @@ a{
         font-size: 2.827rem;
       }
     h5{
-        font-size: 1.9.99rem;
+        font-size: 1.9rem;
       }
     h6{
         font-size:1.414rem;
