@@ -27,3 +27,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // 监听窗口大小变化
   window.addEventListener("resize", handleResize);
 });
+
