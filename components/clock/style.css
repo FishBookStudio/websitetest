@@ -6,19 +6,19 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #f0f0f0;
+    background: #fef5f6;
     margin: 0;
 }
 
 .clock {
     width: 300px;
     height: 300px;
-    border: 10px solid #ff9999;
+    border: 10px solid #f9466b;
     border-radius: 50%;
     position: relative;
     padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    background: white;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.2);
+    background: #faf2e8;
 }
 
 .clock-face {
@@ -30,7 +30,7 @@ body {
 
 .hand {
     width: 50%;
-    background: black;
+    background: #f7a2a1;
     position: absolute;
     top: 50%;
     transform-origin: 100%;
@@ -49,7 +49,7 @@ body {
 
 .second-hand {
     height: 2px;
-    background: #67568c;
+    background: #ff8195;
 }
 
 .number {
