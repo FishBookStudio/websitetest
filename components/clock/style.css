@@ -8,6 +8,7 @@ body {
     height: 100vh;
     background: #f7f3f8;
     margin: 0;
+    flex-direction: column; /* 垂直排列子元素 */
 }
 
 .clock {
@@ -51,7 +52,7 @@ body {
     height: 2px;
     background: #ff8195;
 }
-
+/*
 .number {
     position: absolute;
     font-size: 24px;
@@ -70,3 +71,26 @@ body {
 .number10 { top: 35%; left: 8%; }
 .number11 { top: 20%; left: 15%; }
 .number12 { top: 15%; left: 50%; }
+*/
+.number {
+    position: absolute;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
+}
+
+.number1  { top: 10%; left: 88%; }
+.number2  { top: 25%; left: 94%; }
+.number3  { top: 50%; left: 96%; }
+.number4  { top: 75%; left: 94%; }
+.number5  { top: 90%; left: 88%; }
+.number6  { top: 94%; left: 50%; }
+.number7  { top: 90%; left: 12%; }
+.number8  { top: 75%; left: 6%; }
+.number9  { top: 50%; left: 4%; }
+.number10 { top: 25%; left: 6%; }
+.number11 { top: 10%; left: 12%; }
+.number12 { top: 6%; left: 50%; }
+
+.copyright{
+   font-size: 12px ;
+}
