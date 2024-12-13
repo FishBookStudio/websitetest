@@ -5,7 +5,6 @@ body {
   display: flex;
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
-  background-color: #f0f0f0; /* 可以设置背景颜色 */
   font-family: Arial, sans-serif; /* 设置字体 */
   flex-direction: column; /* 垂直排列子元素 */
 }
