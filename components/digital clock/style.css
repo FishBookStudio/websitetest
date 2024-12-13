@@ -1,0 +1,75 @@
+/* From Uiverse.io by akshat-patel28 */ 
+body {
+  margin: 0;
+  height: 100vh; /* 让 body 高度占满整个视口 */
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  background-color: #f0f0f0; /* 可以设置背景颜色 */
+  font-family: Arial, sans-serif; /* 设置字体 */
+  flex-direction: column; /* 垂直排列子元素 */
+}
+
+.card {
+    width: 280px;
+    height: 150px;
+    background:#9065b1;
+    border-radius: 15px;
+    /*box-shadow: rgb(0,0,0,0.7) 5px 10px 50px ,rgb(0,0,0,0.7) -5px 0px 250px;*/
+    display: flex;
+    color: white;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    background: linear-gradient(to right, #c1adff, #784390);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    box-shadow: #784390 5px 10px 10px ,#784390 -5px 0px 10px;
+  }
+  
+  .time-text {
+    font-size: 50px;
+    margin-top: 0px;
+    margin-left: 15px;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .time-sub-text {
+    font-size: 15px;
+    margin-left: 5px;
+  }
+  
+  .day-text {
+    font-size: 18px;
+    margin-top: 0px;
+    margin-left: 15px;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .moon {
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: all 0.3s ease-in-out;
+  }
+  .sun {
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card:hover > .moon {
+    font-size: 23px;
+  }
+  .copyright{
+    color:#784390;
+  }
