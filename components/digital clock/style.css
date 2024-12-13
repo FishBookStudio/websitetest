@@ -24,10 +24,12 @@ body {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     overflow: hidden;
-  }
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加平滑的过渡效果 */
+}
+
   
   .card:hover {
-    box-shadow: #784390 5px 10px 10px ,#784390 -5px 0px 10px;
+    transform: scale(1.1); /* 放大 1.05 倍 */
   }
   
   .time-text {
@@ -66,9 +68,21 @@ body {
     transition: all 0.3s ease-in-out;
   }
   
-  .card:hover > .moon {
-    font-size: 23px;
+  .card:hover  .moon {
+    transform: scale(1.4); /* 月亮放大 1.4 倍 */
+    transition: transform 0.3s ease; /* 添加平滑的放大过渡 */
+  }
+  .card:hover  .sun {
+    transform: scale(1.4); /* 月亮放大 1.4 倍 */
+    transition: transform 0.3s ease; /* 添加平滑的放大过渡 */
   }
   .copyright{
     color:#784390;
   }
+  /*.sun:hover{
+    transform: scale(1.4); 
+  }
+  .moon:hover{
+    transform: scale(1.4); 
+  }
+  */
