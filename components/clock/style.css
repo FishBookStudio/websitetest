@@ -12,8 +12,8 @@ body {
 }
 
 .clock {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border: 10px solid #9065b1;
     border-radius: 50%;
     position: relative;
