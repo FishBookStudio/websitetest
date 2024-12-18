@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>倒数日小组件</title>
+    <link rel="stylesheet" href="../countdown-2026/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="countdown-widget">
+      <h1>2026倒计时</h1>
+      <div class="countdown-display" id="countdown">--</div>
+    </div>
+
+    <script>
+      // 固定目标日期
+      const targetDate = new Date("2026-01-01");
+      const countdownDisplay = document.getElementById("countdown");
+
+      // 计算倒数天数
+      function updateCountdown() {
+        const today = new Date();
+        const timeDiff = targetDate - today;
+        const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+        // 更新倒数天数
+        if (daysRemaining >= 0) {
+          countdownDisplay.textContent = daysRemaining;
+        } else {
+          countdownDisplay.textContent = "已过期";
+        }
+      }
+
+      // 初始化倒数日显示
+      updateCountdown();
+
+      // 每天自动更新
+      setInterval(updateCountdown, 1000 * 60 * 60 * 24); // 每天更新一次
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 小组件容器 */
+.countdown-widget {
+  width: 200px;
+  height: 200px; /* 1:1 比例 */
+  text-align: center;
+  overflow: hidden; /* 确保背景图片不会溢出 */
+  background-image: url('./bread.png'); /* 你的吐司图作为背景 */
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
+  position: relative; /* 作为绝对定位的参照 */
+}
+
+/* 内容区域 */
+.countdown-widget h1,
+.countdown-widget .countdown-display,
+.countdown-widget p {
+  z-index: 2; /* 确保文字显示在背景图片上 */
+  color: #8d570d; /* 深棕色，搭配吐司的颜色 */
+}
+
+.countdown-display {
+  font-family: "Pacifico", serif;
+  font-size: 72px;
+  font-weight: 800;
+  margin: 10px 0;
+  text-shadow: 3px 3px 1px #fefbe8; /* 增加立体感 */
+  position: absolute; /* 使用绝对定位 */
+  top: 50%; /* 垂直居中 */
+  left: 50%; /* 水平居中 */
+  transform: translate(-50%, -65%); /* 使元素的中心对齐到容器的中心 */
+}
+
+/* 标题样式 */
+/* 标题样式 */
+.countdown-widget h1 {
+  font-size: 12px; /* 增大标题字体 */
+  font-weight: 600;
+  margin: 0 0 10px 0; /* 设置标题与盒子之间的间距 */
+  position: absolute; /* 使用绝对定位 */
+  top: 20%; /* 垂直居中 */
+  left: 50%; /* 水平居中 */
+  transform: translate(-50%, -10%); /* 使元素的中心对齐到容器的中心 */
+}
+
+
+
+
+
