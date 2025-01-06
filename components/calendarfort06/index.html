@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar Web Component</title>
+    <link rel="stylesheet" href="../calendarfort06/style.css" />
+  </head>
+  <body>
+    <section class="calendar-wrapper">
+      <!-- 左侧显示今天的日期和月份 -->
+      <section class="today-info">
+        <p id="today-date">6</p>
+        <!-- 显示当天的日期 -->
+        <p id="today-month">January</p>
+        <!-- 显示月份 -->
+      </section>
+
+      <section class="calendar">
+        <form action="#">
+          <!-- 星期的首字母显示在第一行 -->
+          <div id="calendar-weekdays" class="calendar-weekdays"></div>
+
+          <!-- 动态生成的日期将放置在这里 -->
+          <div id="calendar-days" class="calendar-days"></div>
+
+          <div class="clearfix"></div>
+        </form>
+      </section>
+    </section>
+
+    <!-- 原来的日历部分 -->
+
+    <!-- 引入 JS 脚本 -->
+    <script src="script.js"></script>
+
+    <script>
+      window.onload = function () {
+        updateCalendar(); // 确保 DOM 加载后更新日历
+      };
+    </script>
+  </body>
+</html>

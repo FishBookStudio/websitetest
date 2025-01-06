@@ -1,0 +1,126 @@
+:root {
+    --color-primary: #eef4ed; /* 主要颜色 */
+    --color-accent: #61bf8f;  /* 强调颜色 */
+    --color-text: #606060;    /* 文字颜色 */
+  }
+  
+  /* 设置整体容器的布局，确保它们并排显示 */
+  section.calendar-wrapper {
+    display: flex;
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    width: 100%;
+    height: 100vh;
+    position: relative; /* 相对定位，确保子元素正确对齐 */
+  }
+  
+  /* 左侧今天日期和月份的容器样式 */
+  section.today-info {
+    background-color: var(--color-accent); 
+    font-family: "Dosis", sans-serif;
+    color: #fff;
+    width: 150px; /* 设置宽度 */
+    height: 292px; /* 设置高度与日历一致 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 0px 0px 5px;
+    z-index: 10; /* 确保它不会被其他元素遮挡 */
+  }
+  
+  /* 显示日期的样式 */
+  #today-date {
+    font-size: 125px;
+    color: var(--color-primary); /* 设置日期颜色 */
+    margin: 0;
+  }
+  
+  /* 显示月份的样式 */
+  #today-month {
+    font-size: 20px;
+    color: var(--color-primary);
+    margin: 0px 0px 20px;
+  }
+  
+  /* 设置日历的日期区域 */
+  .calendar-days {
+    background-color: var(--color-primary); /* 设置日期区域背景色为白色 */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7列，每列占据1个单位的宽度 */
+    grid-gap: 8px; /* 增大单元格之间的间距 */
+    justify-items: center; /* 使日期居中 */
+    padding: 5px;
+    border-radius: 0px 0px 5px 0px;
+  }
+  
+  /* 星期首字母显示的容器 */
+  section.calendar form #calendar-weekdays {
+    display: flex;
+    justify-content: space-between; /* 水平间隔均匀分布 */
+    background-color: var(--color-primary);
+    padding: 5px;
+    border-radius: 0px 5px 0px 0px;
+  }
+  
+  /* 星期字母的标签样式 */
+  section.calendar form #calendar-weekdays label.weekday {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-accent);
+    text-align: center;
+    width: 40px; /* 使星期字母与日期单元格宽度一致 */
+    height: 40px;
+  }
+  
+  /* 星期字母内容的样式 */
+  section.calendar form #calendar-weekdays label.weekday span {
+    display: block;
+    line-height: 40px; /* 使星期字母垂直居中 */
+  }
+  
+  /* 日期单元格的标签样式 */
+  section.calendar form label.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* 增大宽度，确保日期数字有足够空间 */
+    height: 40px; /* 增大高度，确保日期数字有足够空间 */
+    text-align: center;
+    border-radius: 50%; /* 圆形边框 */
+    font-size: 14px;
+    font-weight: normal;
+    transition: background-color 0.2s;
+  }
+  
+  /* 日期内容的样式 */
+  section.calendar form label.day span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 40px; /* 行高设置为与单元格高度相同，确保文本垂直居中 */
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+  }
+  
+  /* 今天日期的样式 */
+  section.calendar form label.day.today {
+    background-color: var(--color-accent); /* 今天的日期突出显示 */
+    color: white;
+  }
+  
+  /* 周末（星期六和星期日）的日期样式 */
+  section.calendar form label.day.weekend {
+    color: var(--color-accent);
+  }
+  
+  /* 清除浮动影响的样式 */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
