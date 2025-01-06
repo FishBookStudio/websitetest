@@ -41,6 +41,7 @@
     font-size: 20px;
     color: var(--color-primary);
     margin: 0px 0px 20px;
+    font-style: italic;
   }
   
   /* 设置日历的日期区域 */
@@ -115,7 +116,7 @@
 /* 周末日期的样式 */
 section.calendar form label.day.weekend {
     color: var(--color-accent); /* 周末字体颜色 */
-    font-weight: bold; /* 周末加粗 */
+    font-weight: 600; /* 周末加粗 */
 }
 
 /* 确保未定义样式的默认日期保持统一 */
