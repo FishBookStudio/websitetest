@@ -1,7 +1,7 @@
 :root {
     --color-primary: #eef4ed; /* 主要颜色 */
     --color-accent: #61bf8f;  /* 强调颜色 */
-    --color-text: #606060;    /* 文字颜色 */
+    --color-dark: #3a6b35;    /* 文字颜色 */
   }
   
   /* 设置整体容器的布局，确保它们并排显示 */
@@ -25,7 +25,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 8px 0px 0px 8px;
     z-index: 10; /* 确保它不会被其他元素遮挡 */
   }
   
@@ -51,7 +51,7 @@
     grid-gap: 8px; /* 增大单元格之间的间距 */
     justify-items: center; /* 使日期居中 */
     padding: 5px;
-    border-radius: 0px 0px 5px 0px;
+    border-radius: 0px 0px 8px 0px;
   }
   
   /* 星期首字母显示的容器 */
@@ -60,14 +60,14 @@
     justify-content: space-between; /* 水平间隔均匀分布 */
     background-color: var(--color-primary);
     padding: 5px;
-    border-radius: 0px 5px 0px 0px;
+    border-radius: 0px 8px 0px 0px;
   }
   
   /* 星期字母的标签样式 */
   section.calendar form #calendar-weekdays label.weekday {
     font-size: 14px;
     font-weight: bold;
-    color: var(--color-accent);
+    color: var(--color-dark);
     text-align: center;
     width: 40px; /* 使星期字母与日期单元格宽度一致 */
     height: 40px;
@@ -105,22 +105,28 @@
     border-radius: 50%;
     transition: background-color 0.2s;
   }
-  
-  /* 今天日期的样式 */
+  /* 今天日期的样式，增加 !important 确保生效 */
   section.calendar form label.day.today {
-    background-color: var(--color-accent); /* 今天的日期突出显示 */
-    color: white;
+    background-color: var(--color-accent); /* 背景色 */
+    color: white !important; /* 文字颜色强制为白色 */
+    font-weight: bold; /* 加粗 */
   }
-  
-  /* 周末（星期六和星期日）的日期样式 */
-  section.calendar form label.day.weekend {
-    color: var(--color-accent);
-  }
-  
-  /* 清除浮动影响的样式 */
-  .clearfix::after {
+
+/* 周末日期的样式 */
+section.calendar form label.day.weekend {
+    color: var(--color-accent); /* 周末字体颜色 */
+    font-weight: bold; /* 周末加粗 */
+}
+
+/* 确保未定义样式的默认日期保持统一 */
+section.calendar form label.day:not(.today):not(.weekend) {
+    color: #7f8c7b; /* 默认文字颜色 */
+}
+
+
+/* 清除浮动影响的样式 */
+.clearfix::after {
     content: "";
     clear: both;
     display: table;
-  }
-  
+}
