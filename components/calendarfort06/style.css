@@ -14,7 +14,7 @@
   }
   
   section.calendar-wrapper {
-    height: 220px;
+    height: 170px;
     display: flex;
     justify-content: center; /* 日历内容水平居中 */
     align-items: center; /* 日历内容垂直居中 */
@@ -31,7 +31,7 @@
     font-family: "Dosis", sans-serif;
     color: #fff;
     width: 120px; /* 设置宽度 */
-    height: 220px; /* 设置高度与日历一致 */
+    height: 170px; /* 设置高度与日历一致 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +42,7 @@
   
   /* 显示日期的样式 */
   #today-date {
-    font-size: 100px;
+    font-size: 80px;
     color: var(--color-primary); /* 设置日期颜色 */
     margin: 0;
   }
@@ -60,7 +60,7 @@
     background-color: var(--color-primary); /* 设置日期区域背景色为白色 */
     display: grid;
     grid-template-columns: repeat(7, 1fr); /* 7列，每列占据1个单位的宽度 */
-    grid-gap: 3px; /* 增大单元格之间的间距 */
+    grid-gap: 0px; /* 增大单元格之间的间距 */
     justify-items: center; /* 使日期居中 */
     padding: 5px;
     border-radius: 0px 0px 8px 0px;
@@ -81,8 +81,8 @@
     font-weight: bold;
     color: var(--color-dark);
     text-align: center;
-    width: 40px; /* 使星期字母与日期单元格宽度一致 */
-    height: 40px;
+    width: 25px; /* 使星期字母与日期单元格宽度一致 */
+    height: 25px;
   }
   
   /* 星期字母内容的样式 */
@@ -96,8 +96,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px; /* 增大宽度，确保日期数字有足够空间 */
-    height: 30px; /* 增大高度，确保日期数字有足够空间 */
+    width: 25px; /* 增大宽度，确保日期数字有足够空间 */
+    height: 25px; /* 增大高度，确保日期数字有足够空间 */
     text-align: center;
     border-radius: 50%; /* 圆形边框 */
     font-size: 12px;
@@ -110,8 +110,8 @@
     display: block;
     width: 100%;
     height: 100%;
-    line-height: 30px; /* 行高设置为与单元格高度相同，确保文本垂直居中 */
-    font-size: 12px;
+    line-height: 25px; /* 行高设置为与单元格高度相同，确保文本垂直居中 */
+    font-size: 10px;
     font-weight: normal;
     text-align: center;
     border-radius: 50%;
@@ -145,11 +145,11 @@ section.calendar form label.day:not(.today):not(.weekend) {
 footer {
   width: 100%; /* 占满整个页面宽度 */
   text-align: center; /* 文本居中 */
-  margin-top: 5px; /* 与上方日历的距离 */
+  margin-top: 0px; /* 与上方日历的距离 */
 }
 
 footer .copyright {
-  font-size: 14px;
+  font-size: 10px;
   color: var(--color-dark); /* 默认文字颜色 */
   font-family: "Dosis", sans-serif; /* 字体样式 */
   opacity: 0.7; /* 增加透明度 */
