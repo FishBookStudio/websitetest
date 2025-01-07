@@ -10,92 +10,135 @@
     <div class="card">
       <p class="time-text">
         <span id="current-time">11:11</span>
-        <span id="time-sub-text" class="time-sub-text">PM</span>
+        <span id="time-sub-text" class="time-sub-text">AM</span>
       </p>
       <p class="day-text" id="current-day">Wednesday, June 15th</p>
 
       <div id="icon-container">
         <!-- 默认显示 Moon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="moon" id="moon-icon">
-          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          class="moon"
+          id="moon-icon"
+        >
+          <path
+            d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+          ></path>
         </svg>
 
-        <!-- 新的 Sun 图标 -->
-        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="sun" id="sun-icon" style="display: none">
-          <path d="M12,17c-2.76,0-5-2.24-5-5s2.24-5,5-5,5,2.24,5,5-2.24,5-5,5Zm1-13V1c0-.55-.45-1-1-1s-1,.45-1,1v3c0,.55,.45,1,1,1s1-.45,1-1Zm0,19v-3c0-.55-.45-1-1-1s-1,.45-1,1v3c0,.55,.45,1,1,1s1-.45,1-1ZM5,12c0-.55-.45-1-1-1H1c-.55,0-1,.45-1,1s.45,1,1,1h3c.55,0,1-.45,1-1Zm19,0c0-.55-.45-1-1-1h-3c-.55,0-1,.45-1,1s.45,1,1,1h3c.55,0,1-.45,1-1ZM6.71,6.71c.39-.39,.39-1.02,0-1.41l-2-2c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l2,2c.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Zm14,14c.39-.39,.39-1.02,0-1.41l-2-2c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l2,2c.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Zm-16,0l2-2c.39-.39,.39-1.02,0-1.41s-1.02-.39-1.41,0l-2,2c-.39,.39-.39,1.02,0,1.41,.2,.2,.45,.29,.71,.29s.51-.1,.71-.29ZM18.71,6.71l2-2c.39-.39,.39-1.02,0-1.41s-1.02-.39-1.41,0l-2,2c-.39,.39-.39,1.02,0,1.41,.2,.2,.45,.29,.71",".29s.51-.1,.71-.29Z"></path>
+        <!-- 默认隐藏 Sun 图标 -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Layer_1"
+          data-name="Layer 1"
+          viewBox="0 0 24 24"
+          width="1em"
+          height="1em"
+          fill="currentColor"
+          class="sun"
+          id="sun-icon"
+        >
+          <path
+            d="M12,17c-2.76,0-5-2.24-5-5s2.24-5,5-5,5,2.24,5,5-2.24,5-5,5Zm1-13V1c0-.55-.45-1-1-1s-1,.45-1,1v3c0,.55,.45,1,1,1s1-.45,1-1Zm0,19v-3c0-.55-.45-1-1-1s-1,.45-1,1v3c0,.55,.45,1,1,1s1-.45,1-1ZM5,12c0-.55-.45-1-1-1H1c-.55,0-1,.45-1,1s.45,1,1,1h3c.55,0,1-.45,1-1Zm19,0c0-.55-.45-1-1-1h-3c-.55,0-1,.45-1,1s.45,1,1,1h3c.55,0,1-.45,1-1ZM6.71,6.71c.39-.39,.39-1.02,0-1.41l-2-2c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l2,2c.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Zm14,14c.39-.39,.39-1.02,0-1.41l-2-2c-.39-.39-1.02-.39-1.41,0s-.39,1.02,0,1.41l2,2c.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Zm-16,0l2-2c.39-.39,.39-1.02,0-1.41s-1.02-.39-1.41,0l-2,2c-.39,.39-.39,1.02,0,1.41,.2,.2,.45,.29,.71,.29s.51-.1,.71-.29ZM18.71,6.71l2-2c.39-.39,.39-1.02,0-1.41s-1.02-.39-1.41,0l-2,2c.39,.39.39,1.02,0,1.41,.2,.2,.45,.29,.71,.29s.51-.1,.71-.29Z"
+          ></path>
         </svg>
       </div>
     </div>
-    <div><p class="copyright">✨Powered by FishBook Studio</p></div>
+    <div>
+      <p class="copyright">
+        ✨Powered by
+        <a
+          href="https://fast-banon-5bc.notion.site/FishBook-Studio-11c7aed0d3d380c89025e29eb6591b3d"
+          target="_blank"
+          >FishBook Studio</a
+        >
+      </p>
+    </div>
 
     <script>
-      // 更新时间并显示 AM/PM 格式
       function updateTime() {
-        const now = new Date(); // 获取当前时间
+        const now = new Date();
         let hours = now.getHours();
         const minutes = now.getMinutes();
         const isAM = hours < 12;
 
-        // 转换为12小时制
         const amPm = isAM ? "AM" : "PM";
-        hours = hours % 12 || 12; // 如果小时为0，转换为12
+        hours = hours % 12 || 12;
 
-        // 格式化时间
         const timeString = `${hours}:${minutes.toString().padStart(2, "0")}`;
 
-        // 更新时间和AM/PM
         document.getElementById("current-time").textContent = timeString;
         document.getElementById("time-sub-text").textContent = amPm;
 
-        // 获取并格式化日期
-        const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const dayNames = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        const monthNames = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
 
         const dayName = dayNames[now.getDay()];
         const monthName = monthNames[now.getMonth()];
         const dayOfMonth = now.getDate();
-        const ordinalSuffix = getOrdinalSuffix(dayOfMonth); // 获取序数后缀（如1st, 2nd）
+        const ordinalSuffix = getOrdinalSuffix(dayOfMonth);
 
         const dateString = `${dayName}, ${monthName} ${dayOfMonth}${ordinalSuffix}`;
 
-        // 更新日期
         document.getElementById("current-day").textContent = dateString;
 
-        // 切换图标
         updateIcon(hours);
       }
 
-      // 获取序数后缀函数
       function getOrdinalSuffix(day) {
-        if (day > 10 && day < 20) return "th"; // 11-19都是th
+        if (day > 10 && day < 20) return "th";
         switch (day % 10) {
-          case 1: return "st";
-          case 2: return "nd";
-          case 3: return "rd";
-          default: return "th";
+          case 1:
+            return "st";
+          case 2:
+            return "nd";
+          case 3:
+            return "rd";
+          default:
+            return "th";
         }
       }
 
-      // 切换白天/晚上图标
-      function updateIcon(hour) {
-        const sunIcon = document.getElementById("sun-icon");
+      function updateIcon(hours) {
         const moonIcon = document.getElementById("moon-icon");
+        const sunIcon = document.getElementById("sun-icon");
 
-        if (hour >= 6 && hour < 18) {
-          // 白天，显示太阳图标
-          sunIcon.style.display = "block";
-          moonIcon.style.display = "none";
+        if (hours >= 6 && hours < 18) {
+          moonIcon.style.display = "none"; // 隐藏月亮图标
+          sunIcon.style.display = "inline"; // 显示太阳图标
         } else {
-          // 晚上，显示月亮图标
-          sunIcon.style.display = "none";
-          moonIcon.style.display = "block";
+          moonIcon.style.display = "inline"; // 显示月亮图标
+          sunIcon.style.display = "none"; // 隐藏太阳图标
         }
       }
 
-      // 每秒更新一次时间
       setInterval(updateTime, 1000);
 
-      // 初始显示时间和图标
       updateTime();
     </script>
   </body>
