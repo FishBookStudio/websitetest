@@ -37,17 +37,17 @@
         <li class="nav__item"><a href="#">CONTACT</a></li>
       </ul>
     </nav>
-    <section class="block block--dark block--skewed-left hero">
+    <section class="block block--dark hero block--skewed-left">
       <div class="container">
         <div class="grid grid--cols-2">
           <header class="block__header hero__content">
-            <h1 class="block__heading">cloud hosting for pros</h1>
-            <p class="hero__tagline">
-              希望我可以创造一片结界，如同创造魔法森林。营造密林，熬制神秘糖果，封装勇气和爱，分发给过路的人。
-            </p>
-            <a href="" class="btn btn-purple btn--stretched">get start</a>
+            <h1 class="block__heading">12 Week Year Planner</h1>
+            <p class="hero__tagline">Software should be beautiful.</p>
+            <a href="" class="btn btn-purple btn--stretched btn-banner"
+              >get start</a
+            >
           </header>
-          <img class="hero__image" src="images/fish.png" alt="" />
+          <img class="hero__image" src="images/banner.png" alt="" />
         </div>
       </div>
     </section>
@@ -55,18 +55,10 @@
     <section class="block container block-domain">
       <header class="block__header">
         <h2>Simple Pricing, Powerful Solutions</h2>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-          delectus ipsa cumque dolorem veritatis consequatur modi, pariatur
-          consequuntur et vel!
-        </p>
+        <p></p>
       </header>
       <div class="input-group box-shadow">
-        <input
-          type="text"
-          class="input"
-          placeholder="enter domain name here..."
-        />
+        <input type="text" class="input" placeholder="enter here..." />
         <button class="btn btn-purple">
           <svg class="icon icon-text">
             <use :href="images/sprite.svg#search"></use>
@@ -76,24 +68,72 @@
       </div>
       <ul class="list block-domain__prices">
         <li>
-          <span class="badge badge--secondary"> abda </span>
+          <span class="badge badge--secondary"> 教程</span>
         </li>
-        <li>vffsvf</li>
-        <li>ssf</li>
-        <li>fds</li>
-        <li>dsdfs</li>
-        <li>ssfv</li>
+        <li>模版</li>
+        <li>小组件</li>
+        <li>笔记</li>
+        <li>MarginNote</li>
+        <li>思维导图</li>
       </ul>
+    </section>
+    <section class="block block-showcase block--dark">
+      <header class="block__header">
+        <h2>12 Week Year Planner</h2>
+      </header>
+      <div class="container grid grid--cols-2">
+        <picture class="block-showcase__image">
+          <img src="images/12weekpalnner@1x.png" alt="" />
+        </picture>
+        <ul class="list">
+          <li>
+            <div class="media">
+              <div class="media__body">
+                <h3 class="media__title">第一步：设置愿景</h3>
+                <p>这个阶段不需要思考怎么样实现，心有多大，路有多宽。</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="media">
+              <div class="media__body">
+                <h3 class="media__title">第二步：战术拆分</h3>
+                <p>
+                  首先我们需要将愿景进行战术拆分成一个个具体的目标，关键是要确定几个重要的目标。点击模版中的按钮就可以新建各个领域的目标。
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="media">
+              <div class="media__body">
+                <h3 class="media__title">第三步：确定关键子任务</h3>
+                <p>确定每周需要实现的结果和需要完成的任务。</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="media">
+              <div class="media__body">
+                <h3 class="media__title">第四步：战术复盘</h3>
+                <p>
+                  在模版中我设计的是可重复的任务，首先在目标次数中输入自己一周需要完成多少次该任务，打卡结束后在完成情况一栏中会通过公式自动计算出这个任务在这一周的完成率。
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
     <section class="salesplan block">
       <div class="grid grid--cols-3">
         <div style="padding: 4rem">
-          <div class="card card--secondary plan">
+          <div class="card card--accent plan">
             <header class="card__header">
               <h3 class="plan__name">基础版</h3>
-              <span class="plan__price">¥580</span>
+              <span class="plan__price">¥880</span>
               <span class="plan__billing-cycle"></span>
-              <span class="badge badge--accent badge--small">10%off</span>
+              <span class="badge badge--secondary badge--small">10%off</span>
               <span class="plan__description">基础模版解决方案</span>
             </header>
             <div class="card__body">
@@ -114,7 +154,7 @@
           <div class="card card--accent plan plan--popular">
             <header class="card__header">
               <h3 class="plan__name">进阶版</h3>
-              <span class="plan__price">¥780</span>
+              <span class="plan__price">¥980</span>
               <span class="plan__billing-cycle"></span>
               <span class="badge badge--secondary badge--small">10%off</span>
               <span class="plan__description">更多功能支持</span>
@@ -137,12 +177,12 @@
           </div>
         </div>
         <div style="padding: 4rem">
-          <div class="card card--secondary plan">
+          <div class="card card--accent plan">
             <header class="card__header">
               <h3 class="plan__name">高级版</h3>
-              <span class="plan__price">¥980</span>
+              <span class="plan__price">¥1080</span>
               <span class="plan__billing-cycle"></span>
-              <span class="badge badge--accent badge--small">10%off</span>
+              <span class="badge badge--secondary badge--small">10%off</span>
               <span class="plan__description">全功能支持和优化</span>
             </header>
             <div class="card__body">
@@ -163,91 +203,12 @@
       </div>
     </section>
 
-    <section class="block block--dark block-showcase">
-      <header class="block__header">
-        <h2>user-friendly control panel</h2>
-      </header>
-      <div class="container grid grid--cols-2">
-        <picture class="block-showcase__image">
-          <source
-            type="image/webp"
-            srcset="
-              images/12week-website@1x.webp 1x,
-              images/12week-website@2x.webp 2x
-            "
-          />
-          <source
-            type="image/png"
-            srcset="
-              images/12week-website.png    1x,
-              images/12week-website@2x.png 2x
-            "
-          />
-          <img src="images/12week-website@2x.png" alt="" />
-        </picture>
-        <ul class="list">
-          <li>
-            <div class="media">
-              <div class="media__image">
-                <svg class="icon icon-accent">
-                  <use href="images/sprite.svg#snap"></use>
-                </svg>
-              </div>
-              <div class="media__body">
-                <h3 class="media__title">easy start & managed updates</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Deserunt ratione totam error quo quae facilis ipsam mollitia
-                  sapiente aliquam soluta!
-                </p>
-              </div>
-            </div>
-          </li>
-          <li></li>
-          <li>
-            <div class="media">
-              <div class="media__image">
-                <svg class="icon icon-accent">
-                  <use :href="images/sprite.svg#snap"></use>
-                </svg>
-              </div>
-              <div class="media__body">
-                <h3 class="media__title">easy start & managed updates</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Deserunt ratione totam error quo quae facilis ipsam mollitia
-                  sapiente aliquam soluta!
-                </p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="media">
-              <div class="media__image">
-                <svg class="icon icon-accent">
-                  <use :href="images/sprite.svg#snap"></use>
-                </svg>
-              </div>
-              <div class="media__body">
-                <h3 class="media__title">easy start & managed updates</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Deserunt ratione totam error quo quae facilis ipsam mollitia
-                  sapiente aliquam soluta!
-                </p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
     <section class="block">
       <header class="block__header">
         <h2>What Our Users Are Saying</h2>
-        <p>
-          Discover how Creative OS Second Brain has revolutionized workflows for
-          professionals like you.
+        <p class="comments-sidetitle">
+          Discover how fishbook has revolutionized workflows for professionals
+          like you.
         </p>
       </header>
       <div class="testimonials2-content">
@@ -985,7 +946,7 @@
           </div>
         </section>
         <section class="collapsible collapsible--expanded footer__section">
-          <div class="collapsible__header footer__section">
+          <div class="collapsible__header">
             <h2 class="collapsible__heading footer__heading">item4</h2>
             <svg
               class="icon icon-accent collapsible_chevron"
@@ -1009,7 +970,7 @@
         </section>
         <div class="footer__brand">
           <img src="images/fish.png" alt="" />
-          <p class="footer__copyright">copyright 2024 Melody Fish</p>
+          <p class="footer__copyright">copyright 2024 FishBook Studio</p>
         </div>
       </div>
     </footer>
