@@ -107,7 +107,6 @@ body{
     vertical-align: middle;
 }
 
-
 .banner {
     grid-column-gap: .5rem;
     background-color: #e8e6e3;
@@ -692,7 +691,7 @@ a{
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* 增强阴影 */
 }
 .plan--popular:hover {
-    transform: scale(1.3); /* 放大效果 */
+    transform: scale(1.2); /* 放大效果 */
     z-index: 2; /* 提高层级防止被遮挡 */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* 增强阴影 */
 }
@@ -779,7 +778,7 @@ a{
         grid-template-columns: 50% 50%;
     }
     .block-showcase__image {
-        justify-self: end;
+        justify-self: center;
         align-self:center;
     }
     .block-showcase__image > img {
@@ -827,7 +826,7 @@ a{
     margin: 0 auto;
 }
 .salesplan .grid{
-    gap: 8rem 2rem;
+    gap: 2rem 0rem;
 }
 .salesplan .card{
     max-width:700px;
