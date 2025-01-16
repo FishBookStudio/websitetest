@@ -817,6 +817,7 @@ a{
 .block-showcase__image > img {
     width:80%;
 }
+
 @media screen and (min-width: 768px ){
     .block-showcase .grid{
         grid-template-columns: 50% 50%;
