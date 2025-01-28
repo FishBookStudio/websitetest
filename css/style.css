@@ -818,9 +818,9 @@ a{
     width:80%;
 }
 
-@media screen and (min-width: 768px ){
+@media screen and (min-width: 1080px ){
     .block-showcase .grid{
-        grid-template-columns: 50% 50%;
+        grid-template-columns:1fr 1fr;
     }
     .block-showcase__image {
         justify-self: center;
