@@ -15,7 +15,6 @@
       <p class="day-text" id="current-day">Wednesday, June 15th</p>
 
       <div id="icon-container">
-        <!-- 默认显示 Moon -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
@@ -30,7 +29,6 @@
           ></path>
         </svg>
 
-        <!-- 默认隐藏 Sun 图标 -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="Layer_1"
@@ -48,98 +46,62 @@
         </svg>
       </div>
     </div>
-    <div>
+    <footer>
       <p class="copyright">
-        ✨Powered by
+        ✨ Powered by
         <a
-          href="https://fast-banon-5bc.notion.site/FishBook-Studio-11c7aed0d3d380c89025e29eb6591b3d"
+          href="https://fast-banon-5bc.notion.site/FishBook-Studio-11c7aed0d3d380c89025e29eb6591b3d?pvs=4"
           target="_blank"
           >FishBook Studio</a
         >
       </p>
-    </div>
-
+    </footer>
     <script>
+      // 获取 DOM 元素
+      const currentTime = document.getElementById("current-time");
+      const timeSubText = document.getElementById("time-sub-text");
+      const currentDay = document.getElementById("current-day");
+      const moonIcon = document.getElementById("moon-icon");
+      const sunIcon = document.getElementById("sun-icon");
+
+      // 更新时间和日期的函数
       function updateTime() {
         const now = new Date();
-        let hours = now.getHours();
-        const minutes = now.getMinutes();
-        const isAM = hours < 12;
+        const hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, "0");
 
-        const amPm = isAM ? "AM" : "PM";
-        hours = hours % 12 || 12;
+        // 格式化时间（12 小时制）
+        const ampm = hours >= 12 ? "PM" : "AM";
+        const formattedHours = hours % 12 || 12; // 将 0 转换为 12
 
-        const timeString = `${hours}:${minutes.toString().padStart(2, "0")}`;
+        // 更新时间显示
+        currentTime.textContent = `${formattedHours}:${minutes}`;
+        timeSubText.textContent = ampm;
 
-        document.getElementById("current-time").textContent = timeString;
-        document.getElementById("time-sub-text").textContent = amPm;
+        // 更新日期显示
+        const options = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        };
+        currentDay.textContent = now.toLocaleDateString("en-US", options);
 
-        const dayNames = [
-          "Sunday",
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ];
-        const monthNames = [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December",
-        ];
-
-        const dayName = dayNames[now.getDay()];
-        const monthName = monthNames[now.getMonth()];
-        const dayOfMonth = now.getDate();
-        const ordinalSuffix = getOrdinalSuffix(dayOfMonth);
-
-        const dateString = `${dayName}, ${monthName} ${dayOfMonth}${ordinalSuffix}`;
-
-        document.getElementById("current-day").textContent = dateString;
-
-        updateIcon(hours);
-      }
-
-      function getOrdinalSuffix(day) {
-        if (day > 10 && day < 20) return "th";
-        switch (day % 10) {
-          case 1:
-            return "st";
-          case 2:
-            return "nd";
-          case 3:
-            return "rd";
-          default:
-            return "th";
-        }
-      }
-
-      function updateIcon(hours) {
-        const moonIcon = document.getElementById("moon-icon");
-        const sunIcon = document.getElementById("sun-icon");
-
+        // 更新图标显示
         if (hours >= 6 && hours < 18) {
           moonIcon.style.display = "none"; // 隐藏月亮图标
-          sunIcon.style.display = "inline"; // 显示太阳图标
+          sunIcon.style.display = "block"; // 显示太阳图标
         } else {
-          moonIcon.style.display = "inline"; // 显示月亮图标
+          moonIcon.style.display = "block"; // 显示月亮图标
           sunIcon.style.display = "none"; // 隐藏太阳图标
         }
       }
 
-      setInterval(updateTime, 1000);
-
+      // 页面加载时初始化
       updateTime();
+
+      // 每分钟更新一次时间
+      setInterval(updateTime, 60000); // 60000 毫秒 = 1 分钟
     </script>
   </body>
 </html>

@@ -54,9 +54,10 @@ body {
     position: absolute;
     right: 15px;
     top: 15px;
-    transition: all 0.3s ease-in-out;
     z-index: 10; /* 确保图标在最上层 */
 }
+
+
 
 .card:hover .moon {
     transform: scale(1.4); /* 月亮放大 1.4 倍 */
@@ -87,4 +88,17 @@ body {
 
 .copyright a:hover {
     color: var(--color-accent);
+    text-decoration: none; /* 去掉超链接的下划线 */
+    font-weight: bold; /* 使超链接部分稍微突出 */
+    transition: color 0.3s; /* 鼠标悬停时的动画效果 */
 }
+  
+  footer .copyright a {
+    text-decoration: none; /* 去掉超链接的下划线 */
+    font-weight: bold; /* 使超链接部分稍微突出 */
+    transition: color 0.3s; /* 鼠标悬停时的动画效果 */
+  }
+  
+  footer .copyright a:hover {
+    color:#585196; /* 鼠标悬停时的颜色变化 */
+  }

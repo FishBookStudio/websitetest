@@ -11,10 +11,16 @@ body {
 
 /* 标题样式 */
 h1 {
-    color: #254e7a;
+    color: #f5d8c8;
     font-size: 1.5rem; /* 调整标题字体大小 */
 }
+.countdown-container{
+    height:200px;
+    background-color: #155E95;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */
 
+}
 
 /* 倒计时 */
 .countdown {
@@ -23,6 +29,7 @@ h1 {
     align-items: center;
     width: 100%;
     font-size: 0.8rem; /* 调整字体大小 */
+  
 }
 
 /* 每个时间单元 */
@@ -39,8 +46,8 @@ h1 {
 .time-number {
     font-size: 2rem; /* 调整数字大小 */
     font-weight: bold;
-    color: #ffffff; /* 白色字体 */
-    background-color: #347ea9; /* 设置背景颜色 */
+    color: #6A80B9; /* 白色字体 */
+    background-color: #FFF6B3; /* 设置背景颜色 */
     padding: 10px; /* 给数字增加内边距 */
     border-radius: 10px; /* 设置圆角 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */
@@ -49,7 +56,7 @@ h1 {
 /* 标签样式 */
 .time-label {
     font-size: 0.8rem; /* 调整标签字体大小 */
-    color: #347ea9;
+    color: #709ed0;
 }
 
 /* 数字翻页效果 */
