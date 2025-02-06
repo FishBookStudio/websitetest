@@ -1,5 +1,5 @@
 // 设置目标日期：2026年考研日期
-const targetDate = new Date("2025-12-26T00:00:00").getTime();
+const targetDate = new Date("2025-12-25T00:00:00").getTime();
 
 // 更新倒计时
 function updateCountdown() {
