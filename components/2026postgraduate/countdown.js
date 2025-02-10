@@ -1,4 +1,4 @@
-// 设置目标日期：2026年考研日期
+// 设置目标日期：2025年12月25日
 const targetDate = new Date("2025-12-25T00:00:00").getTime();
 
 // 更新倒计时
@@ -12,11 +12,11 @@ function updateCountdown() {
     const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-    // 更新页面上的倒计时
+    // 使用padStart确保个位数补0
     document.getElementById("days-number").textContent = days;
-    document.getElementById("hours-number").textContent = hours;
-    document.getElementById("minutes-number").textContent = minutes;
-    document.getElementById("seconds-number").textContent = seconds;
+    document.getElementById("hours-number").textContent = String(hours).padStart(2, '0');
+    document.getElementById("minutes-number").textContent = String(minutes).padStart(2, '0');
+    document.getElementById("seconds-number").textContent = String(seconds).padStart(2, '0');
 
     // 如果倒计时结束
     if (timeRemaining <= 0) {

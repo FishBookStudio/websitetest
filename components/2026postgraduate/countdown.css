@@ -1,4 +1,10 @@
 /* 全局样式 */
+:root{
+    --color-primary:#e4f5fb;
+    --color-secondary:#fbe4e4;
+    --color-accent:#a786df;
+    --color-text:#564834;
+}
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     margin: 0;
@@ -11,13 +17,13 @@ body {
 
 /* 标题样式 */
 h1 {
-    color: #584a35;
+    color:var(--color-text);
     font-size: 1.5rem; /* 调整标题字体大小 */
     padding:0.4rem;
 }
 .countdown-container{
     height:200px;
-    background-color:#ffdcd1;
+    background-color:var(--color-primary);
     border-radius: 10px;
     padding:4px
     
@@ -49,8 +55,8 @@ h1 {
 .time-number {
     font-size: 2rem; /* 调整数字大小 */
     font-weight: bold;
-    color: #584a35; /* 白色字体 */
-    background-color: #fff9df; /* 设置背景颜色 */
+    color: var(--color-text); /* 白色字体 */
+    background-color: var(--color-secondary); /* 设置背景颜色 */
     padding: 10px; /* 给数字增加内边距 */
     border-radius: 10px; /* 设置圆角 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 设置阴影效果 */
@@ -59,7 +65,7 @@ h1 {
 /* 标签样式 */
 .time-label {
     font-size: 0.8rem; /* 调整标签字体大小 */
-    color: #584a35;
+    color: var(--color-text);
 }
 
 /* 数字翻页效果 */
