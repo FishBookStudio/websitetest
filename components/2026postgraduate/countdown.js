@@ -30,3 +30,18 @@ const interval = setInterval(updateCountdown, 1000);
 
 // 初始调用一次
 updateCountdown();
+function setEqualHeight() {
+    const todayInfo = document.querySelector('.today-info');
+    const calendar = document.querySelector('.calendar');
+  
+    const todayInfoHeight = todayInfo.offsetHeight;
+    const calendarHeight = calendar.offsetHeight;
+  
+    const maxHeight = Math.max(todayInfoHeight, calendarHeight);
+  
+    todayInfo.style.height = `${maxHeight}px`;
+    calendar.style.height = `${maxHeight}px`;
+  }
+  
+  window.addEventListener('load', setEqualHeight);
+  window.addEventListener('resize', setEqualHeight);

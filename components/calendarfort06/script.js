@@ -67,3 +67,21 @@ function updateCalendar() {
         calendarDaysContainer.appendChild(dayLabel);
     }
 }
+function setTodayInfoHeight() {
+    // 获取 .calendar 元素
+    const calendar = document.querySelector('.calendar');
+    // 获取 .today-info 元素
+    const todayInfo = document.querySelector('.today-info');
+  
+    // 获取 .calendar 的高度
+    const calendarHeight = calendar.offsetHeight;
+  
+    // 将 .today-info 的高度设置为 .calendar 的高度
+    todayInfo.style.height = `${calendarHeight}px`;
+  }
+  
+  // 页面加载时调用函数
+  window.addEventListener('load', setTodayInfoHeight);
+  
+  // 窗口大小变化时调用函数（确保响应式布局中高度仍然相等）
+  window.addEventListener('resize', setTodayInfoHeight);
