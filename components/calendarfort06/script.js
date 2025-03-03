@@ -80,8 +80,10 @@ function setTodayInfoHeight() {
     todayInfo.style.height = `${calendarHeight}px`;
   }
   
+  // 使用 ResizeObserver 监听 .calendar 的高度变化
+  const calendar = document.querySelector('.calendar');
+  const resizeObserver = new ResizeObserver(setTodayInfoHeight);
+  resizeObserver.observe(calendar);
+  
   // 页面加载时调用函数
   window.addEventListener('load', setTodayInfoHeight);
-  
-  // 窗口大小变化时调用函数（确保响应式布局中高度仍然相等）
-  window.addEventListener('resize', setTodayInfoHeight);
