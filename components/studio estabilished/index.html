@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>倒数日小组件</title>
+    <link rel="stylesheet" href="../countdown-2026/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="countdown-widget">
+      <h1 id="title">鳕鱼的笔记研究所已成立</h1>
+      <div class="countdown-display" id="days-passed">--</div>
+    </div>
+
+    <script>
+      // 固定起始日期（2024年9月1日）
+      const startDate = new Date(2024, 8, 1); // 月份从0开始计算，8表示9月
+      const daysPassedDisplay = document.getElementById("days-passed");
+
+      // 计算已成立天数
+      function updateDaysPassed() {
+        const today = new Date();
+        const timeDiff = today - startDate; // 当前时间减去起始时间
+        const daysPassed = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+        // 始终显示正数天数（即使当天还未满24小时）
+        daysPassedDisplay.textContent = Math.max(daysPassed, 0);
+      }
+
+      // 初始化显示
+      updateDaysPassed();
+
+      // 每天凌晨自动更新（避免用户半夜看到天数未更新）
+      const now = new Date();
+      const millisecondsUntilMidnight = 24 * 60 * 60 * 1000 - (now % 86400000);
+      setTimeout(() => {
+        updateDaysPassed();
+        setInterval(updateDaysPassed, 86400000); // 之后每天更新
+      }, millisecondsUntilMidnight);
+    </script>
+  </body>
+</html>
