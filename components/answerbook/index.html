@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>答案之书</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f5f5f5;
+        font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        transition: background-color 0.5s ease;
+      }
+
+      .book {
+        width: 300px;
+        height: 400px;
+        perspective: 2000px;
+        cursor: pointer;
+      }
+
+      .book-cover {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 1s ease;
+      }
+
+      .book.flipped .book-cover {
+        transform: rotateY(180deg);
+      }
+
+      .front,
+      .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .front {
+        background: url("answercover.jpg") center/cover no-repeat;
+        background-size: 100% 100%;
+        color: white;
+        font-size: 2em;
+        letter-spacing: 5px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .back {
+        background: url("answerbg.png") center/cover no-repeat;
+        background-size: 100% 100%;
+        transform: rotateY(180deg);
+        padding: 0;
+        text-align: center;
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: black;
+        text-shadow: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .answer {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 20px;
+        color: white;
+      }
+
+      .book.flipped .answer {
+        opacity: 1;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #1a1a1a;
+        }
+        .back {
+          background: #2c3e50;
+          color: white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="book">
+      <div class="book-cover">
+        <div class="front"></div>
+        <div class="back">
+          <div class="answer"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const answers = [
+        "现在就行动",
+        "等待更好的时机",
+        "听从你的直觉",
+        "结果会超出你的预期",
+        "小心，不要被情绪左右",
+        "是的，但要保持谨慎",
+        "不是现在",
+        "你已经知道答案了",
+        "深呼吸，再想一次",
+        "接受这个挑战",
+        "它值得你努力",
+        "放弃是明智的",
+        "重新评估你的计划",
+        "与其纠结，不如去做",
+        "结果在变化中",
+        "信任你的第一反应",
+        "远离是最好的选择",
+        "与他人合作",
+        "必须做出取舍",
+        "这会带来好运",
+        "一切都有代价",
+        "不要轻信表面",
+        "成功的关键是耐心",
+        "重新开始也没关系",
+        "你低估了自己",
+        "这只是开始",
+        "有更好的选择",
+        "忽略它",
+        "值得等待",
+        "是的，但需要时间",
+        "用心倾听",
+        "保持神秘感",
+        "与其担心，不如去做",
+        "放手才有新机会",
+        "那并不重要",
+        "成功几率很大",
+        "你会被支持",
+        "一切皆有可能",
+        "是个冒险，但值得",
+        "不要追问太多",
+        "需要更多信息",
+        "现在不是最好的时机",
+        "是你人生中的一次转折",
+        "再坚持一下",
+        "跟随内心",
+        "先处理其他事情",
+        "你会后悔不去尝试",
+        "事情没那么糟",
+        "别忘了初衷",
+        "你已经准备好了",
+        "不要放大问题",
+        "别再拖延了",
+        "懂得拒绝也是成长",
+        "该你主动了",
+        "这将是一段美好旅程",
+        "不用太认真对待",
+        "会有意外惊喜",
+        "一切尽在掌握中",
+        "否，另寻他法",
+        "明天会更清晰",
+        "别忘了初心",
+        "行动才是答案",
+        "并非你想象的那样",
+        "认真考虑后再决定",
+        "接受这个结果",
+        "多一点信念",
+        "不确定因素太多",
+        "先解决旧问题",
+        "你会得到想要的",
+        "它会悄悄发生",
+        "不要说出去",
+        "它值得保密",
+        "想得太多",
+        "就照你说的做",
+        "是的，毫无疑问",
+        "你还需要时间",
+        "它已经在来路上了",
+        "你会从失败中学到很多",
+        "有人正暗中支持你",
+        "幸福即将到来",
+        "坚持你的决定",
+        "多给自己一些空间",
+        "你比你想得更强大",
+        "小心背后的人",
+        "不可强求",
+        "现在说还为时尚早",
+        "让它过去",
+        "先问自己：你真正想要什么？",
+        "你会做出正确的选择",
+        "放轻松",
+        "保持沉默有时更有力量",
+        "决定权在你手里",
+        "他会回来的",
+        "别去强求一份回应",
+        "时间会回答你",
+        "不如放一放",
+        "它终将明朗",
+        "别被表象欺骗",
+        "会有人指引你",
+        "改变，是种解脱",
+        "你会意外地成功",
+        "想法值得一试",
+        "天时地利人和",
+        "不要害怕改变",
+        "你该休息一下了",
+        "它会帮助你成长",
+        "是命运的安排",
+        "学会等待",
+        "要有底线",
+        "不要忽视细节",
+        "这是通向新开始的门",
+        "答案隐藏在你日常的小事中",
+        "也许，该换个方向",
+        "决定之前先了解真相",
+        "有人正在关注你",
+        "矛盾即将化解",
+        "别低估你的选择",
+        "它正悄然发生",
+        "跳出舒适区",
+        "不要抱怨，去行动",
+        "给你一个微笑再试试",
+        "背后另有玄机",
+        "你会遇到贵人",
+        "不是你一个人的责任",
+        "别让过去牵制你",
+        "选择你害怕的方向",
+        "最好的结果在后头",
+        "你被看见了",
+        "适当妥协也不错",
+        "接纳不完美",
+        "并不如你以为的复杂",
+        "你会为此感到骄傲",
+        "有些答案只能独自找",
+        "你并不孤单",
+        "这次不同了",
+        "不要急于回应",
+        "给对方一些空间",
+        "还可以争取",
+        "别浪费这个机会",
+        "知道放弃才是真聪明",
+        "此刻就做决定",
+        "不要将就",
+        "是的，而且很快",
+        "你正在被测试",
+        "做你害怕的那件事",
+        "没人会责怪你",
+        "这对你很重要",
+        "它值得庆祝",
+        "是时候转向了",
+        "你会收获更多",
+        "是个不错的时机",
+        "小心别被误导",
+        "保持独立思考",
+        "你会战胜困难",
+        "最坏也不会很糟",
+        "不值得为它难过",
+        "你正被低估",
+        "改变视角看问题",
+        "是的，并且是注定的",
+        "持续努力，别轻易放弃",
+        "还没准备好",
+        "未来比你想象中更美",
+        "信任过程",
+        "不如暂缓决定",
+        "它会回来的",
+        "真相正在靠近",
+        "提高你的标准",
+        "好消息在路上",
+        "这只是个开始",
+        "把握这个小机会",
+        "听听朋友的意见",
+        "选择你最不想选的那个",
+        "不如问问自己三次",
+        "很快你就明白了",
+        "会带来意想不到的礼物",
+        "别怕出错",
+        "要的不是答案，而是行动",
+        "从细节里找线索",
+        "一切都刚刚好",
+        "不要回头看",
+        "放下才是真答案",
+        "和自己谈一谈",
+        "最困难的选择往往最值得",
+        "用爱来解决",
+        "决定并不难，难的是接受",
+        "你已经走得够远了",
+        "想一想你的初心",
+        "你已经拥有答案",
+        "静下来，你会知道",
+        "不如问问梦里的你",
+        "今天不是好时机",
+        "不确定性也可以被享受",
+        "世界会给你回应",
+        "那并不是你的错",
+        "它将带来转变",
+        "偶尔也允许自己任性",
+        "重新定义你的“对”",
+        "别太在意他人的目光",
+        "答案就在你写下这问题的一刻出现了",
+        "没有答案，也是一种答案",
+      ];
+
+      const book = document.querySelector(".book");
+      const answer = document.querySelector(".answer");
+
+      book.addEventListener("click", () => {
+        const isFlipped = book.classList.contains("flipped");
+        book.classList.toggle("flipped");
+
+        if (!isFlipped) {
+          const randomIndex = Math.floor(Math.random() * answers.length);
+          answer.textContent = answers[randomIndex];
+        }
+      });
+    </script>
+  </body>
+</html>

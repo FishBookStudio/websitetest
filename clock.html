@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动态时钟</title>
+    <style>
+      :root {
+        --clock-color: #000000;
+        --clock-bg: transparent;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --clock-color: #ffffff;
+          --clock-bg: transparent;
+        }
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background: transparent;
+        font-family: Arial, sans-serif;
+      }
+
+      .clock-link {
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .clock {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: var(--clock-bg);
+        position: relative;
+      }
+
+      .clock-face {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .hand {
+        width: 50%;
+        height: 6px;
+        background: var(--clock-color);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform-origin: 100%;
+        transform: rotate(90deg);
+        transition: all 0.05s;
+        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      }
+
+      .hour-hand {
+        height: 8px;
+        background: var(--clock-color);
+        width: 25%;
+        left: 25%;
+        border-radius: 4px;
+      }
+
+      .minute-hand {
+        height: 6px;
+        background: var(--clock-color);
+        width: 35%;
+        left: 15%;
+        border-radius: 3px;
+      }
+
+      .second-hand {
+        height: 1px;
+        background: #ff0000;
+        width: 40%;
+        left: 10%;
+        transition: all 0.1s cubic-bezier(0.1, 2.7, 0.58, 1);
+      }
+
+      .center-dot {
+        width: 12px;
+        height: 12px;
+        background: var(--clock-color);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .date {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -80px);
+        color: var(--clock-color);
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+      }
+
+      .number {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: 24px;
+        font-weight: normal;
+        color: var(--clock-color);
+      }
+
+      .number span {
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        left: 50%;
+        top: 50%;
+        transform-origin: center;
+      }
+
+      .number1 {
+        transform: translate(-50%, -50%) rotate(30deg) translateY(-120px)
+          rotate(-30deg);
+      }
+      .number2 {
+        transform: translate(-50%, -50%) rotate(60deg) translateY(-120px)
+          rotate(-60deg);
+      }
+      .number3 {
+        transform: translate(-50%, -50%) rotate(90deg) translateY(-120px)
+          rotate(-90deg);
+      }
+      .number4 {
+        transform: translate(-50%, -50%) rotate(120deg) translateY(-120px)
+          rotate(-120deg);
+      }
+      .number5 {
+        transform: translate(-50%, -50%) rotate(150deg) translateY(-120px)
+          rotate(-150deg);
+      }
+      .number6 {
+        transform: translate(-50%, -50%) rotate(180deg) translateY(-120px)
+          rotate(-180deg);
+      }
+      .number7 {
+        transform: translate(-50%, -50%) rotate(210deg) translateY(-120px)
+          rotate(-210deg);
+      }
+      .number8 {
+        transform: translate(-50%, -50%) rotate(240deg) translateY(-120px)
+          rotate(-240deg);
+      }
+      .number9 {
+        transform: translate(-50%, -50%) rotate(270deg) translateY(-120px)
+          rotate(-270deg);
+      }
+      .number10 {
+        transform: translate(-50%, -50%) rotate(300deg) translateY(-120px)
+          rotate(-300deg);
+      }
+      .number11 {
+        transform: translate(-50%, -50%) rotate(330deg) translateY(-120px)
+          rotate(-330deg);
+      }
+      .number12 {
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-120px)
+          rotate(0deg);
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      href="https://fast-banon-5bc.notion.site/FishBook-Studio-11c7aed0d3d380c89025e29eb6591b3d?pvs=4"
+      class="clock-link"
+      target="_blank"
+    >
+      <div class="clock">
+        <div class="clock-face">
+          <div class="number">
+            <span class="number1">I</span>
+            <span class="number2">II</span>
+            <span class="number3">III</span>
+            <span class="number4">IV</span>
+            <span class="number5">V</span>
+            <span class="number6">VI</span>
+            <span class="number7">VII</span>
+            <span class="number8">VIII</span>
+            <span class="number9">IX</span>
+            <span class="number10">X</span>
+            <span class="number11">XI</span>
+            <span class="number12">XII</span>
+          </div>
+          <div class="hand hour-hand"></div>
+          <div class="hand minute-hand"></div>
+          <div class="hand second-hand"></div>
+          <div class="center-dot"></div>
+          <div class="date"></div>
+        </div>
+      </div>
+    </a>
+
+    <script>
+      function setDate() {
+        const now = new Date();
+
+        const seconds = now.getSeconds();
+        const secondsDegrees = (seconds / 60) * 360 + 90;
+        document.querySelector(
+          ".second-hand"
+        ).style.transform = `rotate(${secondsDegrees}deg)`;
+
+        const minutes = now.getMinutes();
+        const minutesDegrees = (minutes / 60) * 360 + (seconds / 60) * 6 + 90;
+        document.querySelector(
+          ".minute-hand"
+        ).style.transform = `rotate(${minutesDegrees}deg)`;
+
+        const hours = now.getHours();
+        const hoursDegrees = (hours / 12) * 360 + (minutes / 60) * 30 + 90;
+        document.querySelector(
+          ".hour-hand"
+        ).style.transform = `rotate(${hoursDegrees}deg)`;
+
+        // 更新日期
+        const date = document.querySelector(".date");
+        const day = now.getDate();
+        const weekDay = ["日", "一", "二", "三", "四", "五", "六"][
+          now.getDay()
+        ];
+        date.textContent = `${day} 周${weekDay}`;
+      }
+
+      setInterval(setDate, 1000);
+      setDate(); // 立即执行一次，避免初始延迟
+    </script>
+  </body>
+</html>
