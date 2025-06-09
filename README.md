@@ -2,7 +2,7 @@
 
 下载到本地
 # 复制仓库
-git clone 
+git clone https://github.com/FishBookStudio/websitetest.git
 
 # 拉取更新
 git pull origin main
