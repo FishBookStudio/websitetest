@@ -1,22 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>访问计数器</title>
+    <title>页面访问计数器</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #visitor-counter {
+        padding: 16px 24px;
+        background: #e0f7fa;
+        color: #006064;
+        font-size: 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
-    <h1>欢迎访问我的网页！</h1>
-    <p>访问次数：<span id="visitor-count">加载中...</span></p>
+    <div id="visitor-counter">
+      欢迎光临，你是鳕鱼的笔记研究所的第<span id="visit-count">加载中...</span>
+    </div>
 
     <script>
-      // 使用 fetch 请求来获取访问次数并显示在页面上
-      fetch("/get-visit-count")
-        .then((response) => response.json())
-        .then((data) => {
-          document.getElementById("visitor-count").textContent = data.count;
-        })
-        .catch((error) => console.error("Error:", error));
+      // 为当前页面生成唯一的 key
+      const pageKey = "visit-count-" + window.location.pathname;
+
+      // 获取访问次数，如果没有则从 5000 开始
+      let count = parseInt(localStorage.getItem(pageKey));
+      if (isNaN(count)) {
+        count = 5000;
+      }
+
+      // 增加访问次数并保存
+      count += 1;
+      localStorage.setItem(pageKey, count);
+
+      // 显示更新后的次数
+      document.getElementById("visit-count").innerText = count;
     </script>
   </body>
 </html>

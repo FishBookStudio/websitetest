@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notion 模板商店</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", sans-serif;
+        background-color: #f9f9f9;
+      }
+
+      header {
+        text-align: center;
+        padding: 2rem;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .card {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .card:hover {
+        transform: scale(1.02);
+      }
+
+      .image-scroll {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+      }
+
+      .image-scroll img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        margin-right: 5px;
+      }
+
+      .card-content {
+        padding: 1rem;
+      }
+
+      .card-title {
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-desc {
+        color: #555;
+        font-size: 0.95rem;
+      }
+
+      /* Modal */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal-content {
+        background: #fff;
+        border-radius: 12px;
+        padding: 2rem;
+        max-width: 500px;
+        width: 90%;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      .modal-content h2 {
+        margin-top: 0;
+      }
+
+      .modal-content p {
+        color: #555;
+        margin: 0.5rem 0;
+      }
+
+      .price {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #e67e22;
+      }
+
+      .buy-button {
+        margin-top: 1rem;
+        padding: 0.8rem 1.5rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>鳕鱼的 Notion 模板商店</header>
+
+    <div class="container">
+      <!-- 商品卡片 -->
+      <div
+        class="card"
+        onclick="openModal('模板 A', '适用于学习计划的高效模版...', '49 元', 'https://yourpaymentlink.com')"
+      >
+        <div class="image-scroll">
+          <img src="images/a1.jpg" alt="图1" />
+          <img src="images/a2.jpg" alt="图2" />
+          <img src="images/a3.jpg" alt="图3" />
+          <img src="images/a4.jpg" alt="图4" />
+          <img src="images/a5.jpg" alt="图5" />
+          <img src="images/a6.jpg" alt="图6" />
+        </div>
+        <div class="card-content">
+          <div class="card-title">模板 A</div>
+          <div class="card-desc">
+            适用于学习计划的高效模版，帮你理清思路，提高效率。
+          </div>
+        </div>
+      </div>
+
+      <!-- 可继续添加更多商品卡片 -->
+    </div>
+
+    <!-- 弹窗 -->
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">模板名</h2>
+        <p id="modalDesc">模板介绍</p>
+        <p class="price" id="modalPrice">价格</p>
+        <a id="buyLink" href="#" target="_blank"
+          ><button class="buy-button">立即购买</button></a
+        >
+      </div>
+    </div>
+
+    <script>
+      function openModal(title, desc, price, link) {
+        document.getElementById("modalTitle").innerText = title;
+        document.getElementById("modalDesc").innerText = desc;
+        document.getElementById("modalPrice").innerText = price;
+        document.getElementById("buyLink").href = link;
+        document.getElementById("modal").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
