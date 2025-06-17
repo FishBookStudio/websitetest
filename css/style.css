@@ -460,8 +460,11 @@ p{
     letter-spacing: 1px;
     margin:2rem 0 5rem;
 }
-.hero__image{
-    width:100%;
+.hero__image {
+  max-width: 350px;
+  height: auto;
+  margin: 50px auto;
+  display: block;
 }
 
 
