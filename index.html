@@ -48,11 +48,7 @@
         <li class="nav__item">
           <a
             href="https://fast-banon-5bc.notion.site/FishBook-Studio-11c7aed0d3d380c89025e29eb6591b3d?pvs=4"
-            onclick="gtag('event', 'click', {
-              'event_category': 'navigation',
-              'event_label': 'HOME_link',
-              'link_url': 'https://fast-banon-5bc.notion.site/FishBook-Studio-11c7aed0d3d380c89025e29eb6591b3d?pvs=4'
-            });"
+            onclick="trackLinkClick('HOME_link', 'https://fast-banon-5bc.notion.site/FishBook-Studio-11c7aed0d3d380c89025e29eb6591b3d?pvs=4'); return true;"
             >HOME</a
           >
         </li>
@@ -1469,6 +1465,54 @@
       </div>
     </footer>
     <script src="main.js"></script>
+    
+    <!-- GA事件调试脚本 -->
+    <script>
+      // 链接点击跟踪函数
+      function trackLinkClick(label, url) {
+        console.log('跟踪链接点击:', label, url);
+        
+        // 发送GA事件
+        gtag('event', 'click', {
+          'event_category': 'navigation',
+          'event_label': label,
+          'link_url': url,
+          'event_timeout': 2000 // 2秒超时
+        });
+        
+        // 延迟跳转，确保事件发送完成
+        setTimeout(function() {
+          window.location.href = url;
+        }, 100);
+      }
+      
+      // 测试GA事件是否正常工作
+      function testGAEvent() {
+        console.log('测试GA事件...');
+        gtag('event', 'test_click', {
+          'event_category': 'debug',
+          'event_label': 'test_event',
+          'custom_parameter': 'test_value'
+        });
+        console.log('GA事件已发送，请检查控制台和GA实时报告');
+        alert('GA测试事件已发送！请检查GA实时报告。');
+      }
+      
+      // 页面加载完成后自动发送一个测试事件
+      window.addEventListener('load', function() {
+        console.log('页面加载完成，GA配置检查：', typeof gtag !== 'undefined' ? '正常' : '未找到gtag函数');
+        console.log('dataLayer检查：', window.dataLayer ? '正常' : '未找到dataLayer');
+        
+        // 自动发送一个测试事件
+        setTimeout(function() {
+          gtag('event', 'page_view_test', {
+            'event_category': 'debug',
+            'event_label': 'page_loaded'
+          });
+          console.log('页面加载测试事件已发送');
+        }, 2000);
+      });
+    </script>
   </body>
 </html>
 <script src="https://cdn.counter.dev/script.js" data-id="b10154a2-493c-4274-843c-b6339a7b2251" data-utcoffset="8"></script>
