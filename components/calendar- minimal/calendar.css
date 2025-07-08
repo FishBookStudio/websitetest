@@ -1,0 +1,292 @@
+/* 全局颜色变量定义 */
+:root {
+  /* 浅色主题变量 */
+  --light-bg: #f7f9ee;          /* 日历背景色 - 浅黄色 */
+  --light-header-bg: #dcf8cc;   /* 日历头部背景色 - 粉色 */
+  --light-weekday-bg: #dcf8cc;  /* 星期标题背景色 - 粉色 */
+  --light-text: #7ecaae;        /* 主要文字颜色 - 深灰色 */
+  --light-text-secondary: #fff8e9; /* 次要文字颜色 - 中灰色 */
+  --light-header-text: #e24d51; /* 头部文字颜色 - 粉色 */
+  --light-weekday-text: #7ecaae; /* 星期文字颜色 - 粉色 */
+  --light-other-month-bg: #f7f9ee; /* 非当前月份背景色 - 浅黄色 */
+  --light-other-month-text: #cccccc; /* 非当前月份文字颜色 - 浅灰色 */
+  --light-border: transparent;  /* 边框颜色 - 透明 */
+  --light-hover: #7ecaae;       /* 悬停状态背景色 - 浅灰色 */
+  --light-today-bg: #7ecaae;    /* 今天日期背景色 - 浅蓝色 */
+  --light-today-text: #fff;  /* 今天日期文字颜色 - 深灰色 */
+  --light-event-dot: #1976d2;   /* 事件标记点颜色 - 深蓝色 */
+  --light-tooltip-bg: #0f0909;  /* 提示框背景色 - 白色 */
+  --light-tooltip-shadow: rgba(0, 0, 0, 0.15); /* 提示框阴影颜色 */
+  
+  /* 深色主题变量 */
+  --dark-bg: #2c3e50;          /* 深色主题背景色 - 深蓝灰色 */
+  --dark-header-bg: #1a2530;   /* 深色主题头部背景色 - 更深的蓝灰色 */
+  --dark-weekday-bg: #15202b;  /* 深色主题星期标题背景色 - 最深的蓝灰色 */
+  --dark-text: #ffffff;        /* 深色主题文字颜色 - 白色 */
+  --dark-text-secondary: #bdc3c7; /* 深色主题次要文字颜色 - 浅灰色 */
+  --dark-header-text: #ff69b4; /* 深色主题头部文字颜色 - 粉色 */
+  --dark-weekday-text: #ff69b4; /* 深色主题星期文字颜色 - 粉色 */
+  --dark-other-month-bg: #1a2530; /* 深色主题非当前月份背景色 - 深蓝灰色 */
+  --dark-other-month-text: #546e7a; /* 深色主题非当前月份文字颜色 - 中灰色 */
+  --dark-border: transparent;  /* 深色主题边框颜色 - 透明 */
+  --dark-hover: #34495e;       /* 深色主题悬停背景色 - 深蓝灰色 */
+  --dark-today-bg: #1a237e;    /* 深色主题今天日期背景色 - 深蓝色 */
+  --dark-today-text: #ffffff;  /* 深色主题今天日期文字颜色 - 白色 */
+  --dark-event-dot: #64b5f6;   /* 深色主题事件标记点颜色 - 浅蓝色 */
+  --dark-tooltip-bg: #34495e;  /* 深色主题提示框背景色 - 深蓝灰色 */
+  --dark-tooltip-shadow: rgba(0, 0, 0, 0.3); /* 深色主题提示框阴影颜色 */
+}
+
+/* 页面布局设置 */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;  /* 水平居中 */
+  align-items: center;      /* 垂直居中 */
+}
+
+/* 日历容器基本样式 */
+.calendar {
+  width: 300px;
+  background: var(--light-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px var(--light-tooltip-shadow);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 深色主题样式覆盖 */
+.calendar.dark {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* 日历头部样式 */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid var(--light-border);
+  background: var(--light-header-bg);
+  border-radius: 8px 8px 0 0;
+}
+
+/* 深色主题头部样式 */
+.calendar.dark .calendar-header {
+  border-bottom-color: var(--dark-border);
+  background: var(--dark-header-bg);
+}
+
+/* 日历标题样式 */
+.calendar-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--light-header-text);
+}
+
+/* 深色主题标题样式 */
+.calendar.dark .calendar-title {
+  color: var(--dark-header-text);
+}
+
+/* 月份导航按钮样式 */
+.calendar-nav {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #e24d51;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+/* 深色主题导航按钮样式 */
+.calendar.dark .calendar-nav {
+  color: var(--dark-text-secondary);
+}
+
+/* 导航按钮悬停效果 */
+.calendar-nav:hover {
+  background: #7ecaae;
+  color: #fff;
+}
+
+/* 深色主题导航按钮悬停效果 */
+.calendar.dark .calendar-nav:hover {
+  background: var(--dark-hover);
+  color: var(--dark-text);
+}
+
+/* 禁用状态的导航按钮 */
+.calendar-nav:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 星期标题栏样式 */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  padding: 8px 0px;
+  font-weight: 800;
+  color: var(--light-weekday-text);
+  font-size: 0.8rem; /* 调小字体以适应英文 */
+  background: var(--light-weekday-bg);
+  text-transform: uppercase; /* 转换为大写 */
+}
+
+/* 深色主题星期标题栏样式 */
+.calendar.dark .calendar-weekdays {
+  border-bottom-color: var(--dark-border);
+  color: var(--dark-weekday-text);
+  background: var(--dark-weekday-bg);
+}
+
+/* 日期网格容器样式 */
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: var(--light-border);
+  padding: 1px;
+}
+
+/* 深色主题日期网格容器样式 */
+.calendar.dark .calendar-days {
+  background: var(--dark-border);
+}
+
+/* 单个日期单元格样式 */
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-bg);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+  font-size: 0.8rem;
+  color: var(--light-text);
+}
+
+/* 深色主题日期单元格样式 */
+.calendar.dark .calendar-day {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* 日期单元格悬停效果 */
+.calendar-day:hover {
+  background: var(--light-hover);
+  border-radius: 12px;
+  color: #fff;
+}
+
+/* 深色主题日期单元格悬停效果 */
+.calendar.dark .calendar-day:hover {
+  background: var(--dark-hover);
+}
+
+/* 今天日期样式 */
+.calendar-day.today {
+  background: var(--light-today-bg);
+  color: var(--light-today-text);
+  font-weight: 500;
+  border-radius: 12px;
+}
+
+/* 深色主题今天日期样式 */
+.calendar.dark .calendar-day.today {
+  background: var(--dark-today-bg);
+  color: var(--dark-today-text);
+}
+
+/* 非当前月份日期样式 */
+.calendar-day.prev-month,
+.calendar-day.next-month {
+  color: var(--light-other-month-text);
+  background: var(--light-other-month-bg);
+  opacity: 0.5;
+}
+
+/* 深色主题非当前月份日期样式 */
+.calendar.dark .calendar-day.prev-month,
+.calendar.dark .calendar-day.next-month {
+  color: var(--dark-other-month-text);
+  background: var(--dark-other-month-bg);
+}
+
+/* 事件标记点样式 */
+.event-dot {
+  position: absolute;
+  bottom: 2px;
+  width: 3px;
+  height: 3px;
+  background: var(--light-event-dot);
+  border-radius: 50%;
+}
+
+/* 深色主题事件标记点样式 */
+.calendar.dark .event-dot {
+  background: var(--dark-event-dot);
+}
+
+/* 事件提示框样式 */
+.event-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--light-tooltip-bg);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px var(--light-tooltip-shadow);
+  padding: 4px;
+  min-width: 120px;
+  display: none;
+  z-index: 1000;
+  font-size: 0.8rem;
+}
+
+/* 深色主题事件提示框样式 */
+.calendar.dark .event-tooltip {
+  background: var(--dark-tooltip-bg);
+  color: var(--dark-text);
+  box-shadow: 0 2px 8px var(--dark-tooltip-shadow);
+}
+
+/* 显示事件提示框 */
+.calendar-day:hover .event-tooltip {
+  display: block;
+}
+
+/* 事件项样式 */
+.event-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 0;
+  font-size: 0.8rem;
+}
+
+/* 事件时间样式 */
+.event-time {
+  color: var(--light-text-secondary);
+  font-size: 0.7rem;
+}
+
+/* 深色主题事件时间样式 */
+.calendar.dark .event-time {
+  color: var(--dark-text-secondary);
+}
+
+/* 响应式布局调整 */
+@media (max-width: 480px) {
+  .calendar {
+    width: 300px;
+  }
+} 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日历 Web 小组件by鳕鱼的笔记研究所</title>
+    <link rel="stylesheet" href="calendar.css" />
+  </head>
+  <body>
+    <div id="calendar"></div>
+
+    <script src="calendar.js"></script>
+    <script>
+      // 示例事件数据
+      const events = [
+        {
+          date: "2024-03-15",
+          time: "10:00",
+          title: "团队会议",
+        },
+        {
+          date: "2024-03-20",
+          time: "14:30",
+          title: "项目评审",
+        },
+      ];
+
+      // 初始化日历
+      const calendar = new Calendar(document.getElementById("calendar"), {
+        theme: "light", // 或 'dark'
+        events: events,
+        onDateClick: (date) => {
+          console.log("点击日期:", date);
+        },
+        minDate: "2024-01-01",
+        maxDate: "2026-12-31",
+      });
+    </script>
+  </body>
+</html>

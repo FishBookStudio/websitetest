@@ -57,3 +57,14 @@ window.onclick = function(event) {
     }
   });
 }
+// 监听所有带 data-track 的按钮
+document.querySelectorAll('[data-track]').forEach(btn => {
+  btn.addEventListener('click', function() {
+    var trackName = btn.getAttribute('data-track');
+    // 发送事件到 Google Analytics
+    gtag('event', 'button_click', {
+      'event_category': 'button',
+      'event_label': trackName
+    });
+  });
+});
