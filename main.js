@@ -68,3 +68,20 @@ document.querySelectorAll('[data-track]').forEach(btn => {
     });
   });
 });
+
+// 为所有超链接添加GA埋点
+window.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var href = link.getAttribute('href');
+      var text = (link.textContent || '').trim();
+      var eventName = text ? text : href;
+      if (typeof gtag === 'function') {
+        gtag('event', eventName, {
+          'event_category': 'link',
+          'event_label': href
+        });
+      }
+    });
+  });
+});
