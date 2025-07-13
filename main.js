@@ -57,14 +57,42 @@ window.onclick = function(event) {
     }
   });
 }
-// 监听所有带 data-track 的按钮
+// 监听所有带 data-track 的按钮和链接
 document.querySelectorAll('[data-track]').forEach(btn => {
   btn.addEventListener('click', function() {
     var trackName = btn.getAttribute('data-track');
     // 发送事件到 Google Analytics
-    gtag('event', 'button_click', {
-      'event_category': 'button',
+    gtag('event', 'link_click', {
+      'event_category': 'engagement',
       'event_label': trackName
     });
+  });
+});
+
+// 监听所有带 onclick 属性的元素（用于那些使用 window.location.href 的元素）
+document.querySelectorAll('[onclick*="window.location.href"]').forEach(element => {
+  element.addEventListener('click', function() {
+    var trackName = element.getAttribute('data-track');
+    if (trackName) {
+      // 发送事件到 Google Analytics
+      gtag('event', 'link_click', {
+        'event_category': 'engagement',
+        'event_label': trackName
+      });
+    }
+  });
+});
+
+// 监听所有 open-modal-btn 类的按钮（定制服务按钮）
+document.querySelectorAll('.open-modal-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    var trackName = btn.getAttribute('data-track');
+    if (trackName) {
+      // 发送事件到 Google Analytics
+      gtag('event', 'modal_open', {
+        'event_category': 'engagement',
+        'event_label': trackName
+      });
+    }
   });
 });
