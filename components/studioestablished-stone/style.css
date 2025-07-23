@@ -1,0 +1,78 @@
+body {
+  font-family: "Noto Sans SC", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #111;
+  }
+}
+
+/* 小组件容器 */
+.countdown-widget {
+  width: 200px;
+  height: 200px; /* 1:1 比例 */
+  text-align: center;
+  overflow: hidden; /* 确保背景图片不会溢出 */
+  background-image: url('./stone1.png'); 
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center; /* 垂直居中 */
+  align-items: center; /* 水平居中 */
+  position: relative; /* 作为绝对定位的参照 */
+}
+
+/* 内容区域 */
+.countdown-widget h1,
+.countdown-widget .countdown-display,
+.countdown-widget p {
+  z-index: 2; /* 确保文字显示在背景图片上 */
+  color: #8d570d; /* 深棕色，搭配吐司的颜色 */
+}
+
+
+.countdown-display {
+  font-size: 40px;
+  font-weight: 900;
+  margin: 10px 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+}
+
+/* 标题样式 */
+/* 标题样式 */
+.countdown-widget h1 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+
+.countdown-widget .countdown-display {
+  font-size: 54px;
+  font-weight: 800;
+  color: #0d0c0e;
+  text-shadow:
+    -2px -2px 2px #222,    /* 左上深灰内凹阴影 */
+    2px 2px 2px #515557,      /* 右下高光 */
+    0 1px 2px #6c7173;     /* 下方淡高光 */
+  letter-spacing: 2px;
+}
+
+
+
+
